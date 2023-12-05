@@ -1,0 +1,4 @@
+GPU Driver '535' detected
+The argument `trust_remote_code` is to be used with Auto classes. It has no effect here and is ignored.
+/blue/cap4773/somasundaramv/Few-shot-NL2SQL-with-prompting/.autogptq/lib/python3.10/site-packages/transformers/utils/hub.py:374: FutureWarning: The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.
+  warnings.warn(

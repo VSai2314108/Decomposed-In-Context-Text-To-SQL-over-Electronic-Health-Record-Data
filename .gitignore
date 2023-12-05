@@ -1,0 +1,16 @@
+# Ignore the 'data' directory
+/data/
+
+# Ignore the 'physionet.org' directory
+physionet.org/
+
+# Ignore the 'TREQS/database' directory
+/TREQS/database/
+
+.autogptq/
+
+.venv/
+
+.long/
+
+/nltk_data
