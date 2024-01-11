@@ -1,0 +1,29 @@
+1. Remake prompts specific to the medical database 
+2. Add a layer to translate the abbreviations and non-clear terminology
+3. Post process queries using capitalization rules
+
+Capitlization rules
+
+Demographic
+Name First Letter of First and last Capitalized
+Married Status -  NULL/MARRIED/SINGLE
+Gender M or First
+Admission_Type - Capital
+Insurance - First letter Capitalized
+Ethnicity - Fully Capitalized 
+Admission Location - Fully Capitalized
+Discharge Location - Fully Capitalized
+Diagnosis - Fully Capitalized
+
+Diagnoses
+Short_title/LongTitle - First Letter Capital
+Label - First Letter Capital
+
+Prescriptions
+Drug_Type - Capitalized
+Drug - First Letter Capital if not a number
+Route - Fully Capitalized
+
+Procedures
+Short_title/LongTitle - First Letter Capital
+
