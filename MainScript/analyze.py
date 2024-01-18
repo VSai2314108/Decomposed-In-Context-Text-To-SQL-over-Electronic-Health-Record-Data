@@ -11,7 +11,7 @@ import numpy as np
 
 from utils import *
 
-db_file = '/blue/cap4773/somasundaramv/Few-shot-NL2SQL-with-prompting/TREQS/evaluation/mimic_db/mimic.db'
+db_file = '/blue/daisyw/somasundaramv/Few-shot-NL2SQL-with-prompting/TREQS/evaluation/mimic_db/mimic.db'
 model = query(db_file)
 (db_meta, db_tabs, db_head) = model._load_db(db_file)
         

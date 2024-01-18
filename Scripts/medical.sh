@@ -14,10 +14,10 @@
 #SBATCH --mem-per-gpu=70000
 #SBATCH --time=48:00:00
 
-export HF_HOME=/blue/cap4773/somasundaramv/mis
-export HF_DATASETS_CACHE=/blue/cap4773/somasundaramv/datasets
-export TRANSFORMERS_CACHE=/blue/cap4773/somasundaramv/models
-cd /blue/cap4773/somasundaramv/Few-shot-NL2SQL-with-prompting/
+export HF_HOME=/blue/daisyw/somasundaramv/mis
+export HF_DATASETS_CACHE=/blue/daisyw/somasundaramv/datasets
+export TRANSFORMERS_CACHE=/blue/daisyw/somasundaramv/models
+cd /blue/daisyw/somasundaramv/Few-shot-NL2SQL-with-prompting/
 module purge
 module load python/3.10 cuda/11.4.3 nvhpc/23.7 openmpi/4.1.5 vasp/6.4.1
 # rm -rf .autogptq
@@ -31,4 +31,4 @@ source .autogptq/bin/activate
 # pip install optimum
 # pip install pandas
 # pip3 install auto-gptq --extra-index-url https://huggingface.github.io/autogptq-index/whl/cu117/  # Use cu117 if on CUDA 11.7
-srun --mpi=${HPC_PMIX} python3 -u ./MainScript/DIN-SQL-LLAMA-MEDICAL.py --dataset /blue/cap4773/somasundaramv/Few-shot-NL2SQL-with-prompting/TREQS/mimicsql_data/mimicsql_natural_v2/ --output predicted_sql.txt
+srun --mpi=${HPC_PMIX} python3 -u ./MainScript/DIN-SQL-LLAMA-MEDICAL.py --dataset /blue/daisyw/somasundaramv/Few-shot-NL2SQL-with-prompting/TREQS/mimicsql_data/mimicsql_natural_v2/ --output predicted_sql.txt

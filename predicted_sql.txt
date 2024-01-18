@@ -1,0 +1,1000 @@
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.SHORT_TITLE  =  'mal neo descend colon'
+SELECT T1.SUBJECT_ID FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Procedures AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.LABEL  =  'seroma' AND T3.ICD9_CODE  =  'seroma'
+SELECT count(*) FROM Diagnoses WHERE Diagnoses.ICD9_CODE  =  '27180'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  'oliguria' OR T2.ICD9_CODE  =  'anuria'
+SELECT DISTINCT Demographic.SUBJECT_ID FROM Demographic,Lab WHERE Demographic.HADM_ID = Lab.HADM_ID AND Lab.ITEMID  =  'ITEMID' AND Lab.LABEL  =  'cardiopulmonary resuscitation'
+SELECT count(DISTINCT Demographic.SUBJECT_ID) FROM Demographic JOIN Lab ON Demographic.HADM_ID = Lab.HADM_ID WHERE Lab.ITEMID  =  51455
+SELECT count(*) FROM Lab WHERE CHARTTIME  =  '2137-08-30 14:39:00'
+SELECT count(*) FROM Lab WHERE CHARTTIME  =  '2120-04-16 13:27:00'
+SELECT count(*) FROM Lab WHERE CHARTTIME  =  '2111-12-22 19:13:00'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.MARITAL_STATUS  =  'Single' AND T2.ICD9_CODE  =  'acidosis'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.MARITAL_STATUS  =  'divorced' AND T2.SHORT_TITLE  =  'celo-vessicle fistula'
+SELECT count(*) FROM Demographic WHERE DOB_YEAR  <  1846
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.MARITAL_STATUS  =  'married' AND T2.ITEMID  =  'spinal tap'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.MARITAL_STATUS  =  'widowed' AND T2.LONG_TITLE  =  'laryngoscopy' OR T2.LONG_TITLE  =  'other tracheoscopy'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Lab AS T1 JOIN Demographic AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.ITEMID  =  51438 AND T2.MARITAL_STATUS  =  'married'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.MARITAL_STATUS  =  'married' AND T2.ITEMID  =  'bilirubin' AND T2.FLUID  =  'indirect'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Lab AS T1 JOIN Demographic AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.ITEMID  =  'oxygen saturation' AND T2.MARITAL_STATUS  =  'widowed'
+SELECT count(DISTINCT T2.SUBJECT_ID) FROM Demographic AS T1 JOIN lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.LABEL  =  'metamyelocytes' AND T1.MARITAL_STATUS  =  'Widowed'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.MARITAL_STATUS  =  'married' AND T2.LABEL  =  'homocysteine'
+SELECT count(*) FROM Demographic WHERE DISCHARGE_LOCATION  =  'left' AND GENDER  =  'male'
+SELECT count(*) FROM Demographic WHERE GENDER  =  'male' AND DOB_YEAR  <  2156
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  'emphysema' AND T1.GENDER  =  'male'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  'cholangitis' AND T1.GENDER  =  'female'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.GENDER  =  'male' AND T2.DRUG  =  'fluc100'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ITEMID  =  'sedimentation rate' AND T1.GENDER  =  'female'
+SELECT count(*) FROM Demographic WHERE LANGUAGE  =  'Spanish' AND AGE  <  83
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.LANGUAGE  =  'english' AND T2.ICD9_CODE  =  'bipolar 1 disorder' AND T2.ICD9_CODE  =  'depressed' AND T2.ICD9_CODE  =  'unspecified'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Lab AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T1.LANGUAGE  =  'spanish' AND T2.LONG_TITLE  =  'coronary arteriography' AND T3.ITEMID  =  'two catheters'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.LANGUAGE  =  'english' AND T2.ICD9_CODE  =  'infusion of vasopressor agent'
+SELECT count(*) FROM Demographic WHERE AGE  <  86 AND RELIGION  =  'Unknown'
+SELECT count(DISTINCT T1.itemid) FROM lab AS T1 JOIN demographic AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.itemid  =  'potassium' AND T2.religion  =  'orthodox' AND T2.ethnicity  =  'romanian'
+SELECT count(DISTINCT T2.LABEL) FROM Demographic AS T1 JOIN lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ITEMID  =  'Reticulocyte count' AND T2.LABEL  =  'Manual' AND T1.RELIGION  =  'Christian Scientist'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'EMERGENCY' AND (T2.ICD9_CODE  =  'brain mass' OR T2.ICD9_CODE  =  'intracranial hemorrhage')
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'emergency' AND T2.LONG_TITLE  =  'glucocorticoid deficiency'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'Emergency' AND T2.ICD9_CODE  =  4576
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_LOCATION  =  'Emergency' AND T2.LONG_TITLE  =  'opn rt hemicolectomy nec'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'emergency' AND T2.SHORT_TITLE  =  'cv cath plcmt w guidance'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ITEMID  =  100000
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'elective' AND T2.ITEMID  =  'urine creatinine'
+SELECT count(*) FROM Demographic WHERE INSURANCE  =  'self' AND DOB <  '2138-01-01'
+SELECT count(*) FROM Demographic WHERE INSURANCE  =  'private' AND DOD  <=  2131
+SELECT count(*) FROM Demographic WHERE ETHNICITY  =  'Hispanic or Latino' AND AGE  <  20
+SELECT count(*) FROM Demographic WHERE ETHNICITY  =  'Hispanic or Latino' AND AGE  <  27
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ETHNICITY  =  'White' AND T2.SHORT_TITLE  =  'Hyperlipidemia Nec/Nos'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ETHNICITY  =  'black/cape verdean' AND T2.DRUG  =  '1/2 ns'
+SELECT count(DISTINCT T2.hadm_id) FROM demographic AS T1 JOIN lab AS T2 ON T1.hadm_id  =  T2.hadm_id WHERE T2.CATEGORY  =  'chemistry' AND T1.ETHNICITY  IN ('black', 'haitian')
+SELECT count(*) FROM Demographic WHERE DOD  =  0 AND SUBJECT_ID IN (SELECT SUBJECT_ID FROM Demographic WHERE DIAGNOSIS  =  'femoral artery thrombosis')
+SELECT count(*) FROM Demographic WHERE DOB_YEAR  <  2083 AND EXPIRE_FLAG  =  1
+SELECT count(*) FROM Demographic WHERE ADMITTIME  <  2114 AND DOD  =  'Unspecified'
+SELECT count(DISTINCT T1.DOD) ,  count(DISTINCT T2.ICD9_CODE) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD  IS NOT NULL AND T2.ICD9_CODE  =  'Proteus'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD IS NOT NULL AND T2.ICD9_CODE  =  'cl skul base fx-coma nos'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD IS NOT NULL AND T2.LONG_TITLE  =  'other second degree atrioventricular block'
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD  IS NOT NULL AND T2.ICD9_CODE  =  'unspecified asthma'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD  IS NOT NULL AND T2.ICD9_CODE  =  'incision of aorta'
+SELECT count(*) FROM Demographic WHERE ADMISSION_TYPE  =  'office' AND AGE  <  50
+SELECT count(*) FROM Demographic WHERE ADMISSION_TYPE  =  'Emergency' AND ADMITTIME  <  '2155-01-01'
+SELECT count(DISTINCT T1.hadm_id) FROM diagnoses AS T1 JOIN demographic AS T2 ON T1.hadm_id  =  T2.hadm_id WHERE T1.icd9_code  =  'Dysphagia NOS' AND T2.admission_type  =  'Clinic Referral (Premature)'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_LOCATION  =  'phys referral/normal deli' AND T2.LONG_TITLE  =  'diverticulitis of colon'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_LOCATION  =  'hosp' OR T1.ADMISSION_LOCATION  =  'extram' AND T2.ICD9_CODE  =  'benign neoplasm of spinal meninges'
+SELECT count(Demographic.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'office hospital admission' AND (T2.LONG_TITLE  =  'open' OR T2.LONG_TITLE  =  'sigmoidectomy')
+SELECT count(*) FROM Demographic WHERE ADMITTIME  <  2127 AND DISCHARGE_LOCATION  =  'home'
+SELECT count(*) FROM Demographic WHERE ADMISSION_TYPE  =  'HOME HEALTH CARE' AND ADMITTIME  <  2197
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DISCHARGE_LOCATION  =  'skilled nursing facility' AND T2.ICD9_CODE  =  'end stage renal disease'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'home health care' AND T2.ICD9_CODE  =  'other abnormal blood chemistry'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DISCHARGE_LOCATION  =  'home' AND T2.LONG_TITLE  =  'contr cerebr arteriogram'
+SELECT count(*) FROM Demographic WHERE ADMISSION_TYPE  =  'home health care' AND DIAGNOSIS  LIKE '%percutaneous abdominal drainage%'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'short term hospital' AND T2.ITEMID  =  'potassium whole blood'
+SELECT count(DISTINCT T1.ITEMID) FROM Lab AS T1 JOIN Demographic AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ITEMID  =  'magnesium' AND T2.DISCHARGE_LOCATION  =  'snf'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'home health care' AND T2.ITEMID  =  'urea nitrogen'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'home health care' AND T2.ITEMID  =  'amylase'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOB  <  2111 AND T2.ICD9_CODE  =  'atrial septal defect' OR T2.ICD9_CODE  =  'mitral valve replacement' OR T2.ICD9_CODE  =  'repair atrial-septal defect/sda'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOB_YEAR  <  2080 AND T2.ICD9_CODE  =  'atrial septal defect/mitral valve replacement; repair atrial-septal defect/sda'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOB_YEAR  <  2076 AND T2.ICD9_CODE  =  'bladder cancer/sda'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2176 AND T2.ICD9_CODE  =  'squamous cell carcinoma oral tongue (sda)'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2197 AND T2.ICD9_CODE  =  'st elevated myocardial infarction\cardiac cath'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2197 AND T2.ICD9_CODE  =  'neoplasm' AND T2.SHORT_TITLE  =  'primary disease' AND T2.LONG_TITLE  =  'neoplasm of uncertain behavior of other lymphatic and hematopoietic tissues/bone marrow transplant'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Lab AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  'acidosis' AND T3.CATEGORY  =  'blood gas'
+SELECT count(*) FROM Demographic WHERE AGE  <  71 AND DOD  <=  2132
+SELECT T1.SUBJECT_ID FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  61 AND T2.ICD9_CODE  =  '410.9'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  77 AND T2.SHORT_TITLE  =  'radiotherapeutic proc nec'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  86 AND T2.ITEMID  =  'vasopressor'
+SELECT count(DISTINCT T2.subject_id) FROM demographic AS T1 JOIN procedures AS T2 ON T1.subject_id  =  T2.subject_id WHERE T2.SHORT_TITLE  =  'extracorporeal circulat' AND T1.AGE  <  82
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  74 AND T2.SHORT_TITLE  =  'form cutan ileoureterost'
+SELECT count(Demographic.SUBJECT_ID) FROM Demographic JOIN Procedures ON Demographic.HADM_ID = Procedures.HADM_ID WHERE AGE  <  45 AND LONG_TITLE  =  "parenteral infusion of concentrated nutritional substances"
+SELECT count(DISTINCT T1.subject_id) FROM lab AS T1 JOIN demographic AS T2 ON T1.hadm_id  =  T2.hadm_id WHERE T1.itemid  =  'venous catheterization' AND T2.age  <  55
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  15 AND T2.ICD9_CODE  =  'respiratory distress'
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  15 AND T2.ICD9_CODE  =  'respiratory distress syndrome'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  5 AND T2.ICD9_CODE  =  5
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  29 AND T2.ITEMID  =  'other phototherapy'
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  7 AND T2.ICD9_CODE  =  'opn rt hemicolectomy nec'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  1 AND T2.ICD9_CODE  =  1
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  6 AND T2.ICD9_CODE  =  '428.0' OR T2.ICD9_CODE  =  '428.1'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  6 AND T2.ICD9_CODE  =  '2099'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Prescriptions AS T1 JOIN Demographic AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T2.DAYS_STAY  >  11 AND T1.DRUG_TYPE  =  'BASE'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  15 AND T2.DRUG  =  'niacin'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  0 AND T2.DRUG  =  'Morphine sulfate sr'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  4 AND T2.VALUE_UNIT  =  'labetol hcl'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  13 AND T2.DRUG  =  'caphosol'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  1 AND T2.DRUG  =  'tramadol'
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 WHERE T1.HADM_ID NOT IN (SELECT DISTINCT T2.HADM_ID FROM Demographic AS T2 JOIN Prescriptions AS T3 ON T2.HADM_ID  =  T3.HADM_ID WHERE T3.ROUTE  =  'nebulizer')
+SELECT count(DISTINCT T2.id) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  10 AND T2.ROUTE  =  'both'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  16 AND T2.DRUG_TYPE  =  'PO'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  34 AND T2.ROUTE  =  "both eyes"
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2139 AND T2.ICD9_CODE  =  'candidias urogenital nec'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2154 AND T2.ICD9_CODE  =  'removal of other organ causing abnormal patient reaction, or later complication, without mention of misadventure at time of operation'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Lab AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T1.ADMITTIME  <  2152 AND T2.ICD9_CODE  =  'benign prostatic hypertrophy' AND T3.ITEMID  =  'urinary obstruction' AND T3.ITEMID  =  'other lower urinary tract symptoms'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2168 AND T2.SHORT_TITLE  =  "other postop infection"
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2119 AND T2.ICD9_CODE  =  '78551'
+SELECT count(DISTINCT T2.hadm_id) FROM diagnoses AS T1 JOIN demographic AS T2 ON T1.hadm_id  =  T2.hadm_id WHERE T1.icd9_code  =  '585' AND T2.admittime  <  2156
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2167 AND T2.ICD9_CODE  =  '860.0'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID = T2.HADM_ID WHERE T1.ADMITTIME  <  2195 AND T2.SHORT_TITLE  =  'clo endosc bx bile duct'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2180 AND T2.ICD9_CODE  =  '272.0'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2162 AND T2.LONG_TITLE  =  'int insert dual- cham dev'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2123 AND T2.LONG_TITLE  =  "percutaneous transluminal coronary angioplasty [ptca]"
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2139 AND T2.LONG_TITLE  =  "other closed [endoscopic] biopsy of biliary duct or sphincter of oddi"
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2146 AND T2.LONG_TITLE  =  "repair of fistula involving bladder and intestine"
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2179 AND T2.LONG_TITLE  =  "endovascular (total) embolization or occlusion of head and neck vessels"
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2190 AND T2.ICD9_CODE  =  '2190'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM lab AS T1 JOIN Demographic AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.ITEMID  =  'Implant of pulsation balloon' AND T1.CHARTTIME  <  '2177-01-01'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.ADMITTIME  <  2194 AND T2.DRUG  =  'magnesium sulfate replacement'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.ADMITTIME  <  2176 AND T2.DRUG  =  "montelukast sodium"
+SELECT T1.SUBJECT_ID FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2170 AND T2.DRUG  =  "clopidogrel bisulfate"
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.ADMITTIME  <  2180 AND T2.DRUG  =  "cefazolin"
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2198 AND T2.DRUG  =  "gentamicin sulfate"
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2170 AND T2.DRUG  =  'clobetasol propionate 0.05% oinment'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM lab AS T1 JOIN demographic AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.LABEL  =  'heparin' OR T1.LABEL  =  'Imw' AND T2.ADMITTIME  <  2144
+SELECT count(Lab.SUBJECT_ID) FROM Lab AS T1 JOIN Demographic AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.ITEMID  =  2151 AND T2.ADMITTIME  <  T1.CHARTTIME
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM lab AS T1 JOIN demographic AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.ITEMID  =  't4' AND T2.ADMITTIME  <  2127
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2182 AND T2.ITEMID  =  'c4'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2190 AND T2.ITEMID  =  'Hemoglobin A1C'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2150 AND T2.ITEMID  =  'Cortisol'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Prescriptions AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  'urin tract infection nos' AND T3.DRUG_TYPE  =  'additive therapy'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Prescriptions AS T1 JOIN Diagnoses AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.DRUG_TYPE  =  'main drug type' AND T2.ICD9_CODE  =  'poisoning by other opiates and related narcotics'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Prescriptions AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  'ulcer of heel and midfoot' AND T3.DRUG_TYPE  =  'base'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID JOIN Diagnoses AS T3 ON T1.SUBJECT_ID  =  T3.SUBJECT_ID WHERE T2.DRUG_TYPE  =  'base' AND T3.ICD9_CODE  =  'other' AND T3.ICD9_CODE  =  'unspecified' AND T3.ICD9_CODE  =  'cardiovascular' AND T3.ICD9_CODE  =  'adverse' AND T3.ICD9_CODE  =  'effects'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Prescriptions AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  'tia/stroke' AND T3.DRUG  =  'Warfarin'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Prescriptions AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ROUTE  =  'SC' AND T2.SHORT_TITLE  =  'crbl art ocl nos w infrc'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Lab AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  'ca in situ oral cav/phar' AND T3.ROUTE  =  'im drug route'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Prescriptions AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  'noninf gastroenterit nec' AND T3.ROUTE  =  'oral drug route'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Lab AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.SHORT_TITLE  =  'crbl art ocl nos w infrc' AND T3.FLAG  =  'abnormal'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Lab AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.SHORT_TITLE  =  'heart valve replacement nec' AND T3.FLAG  =  'delta'
+SELECT count(DISTINCT T1.subject_id) FROM lab AS T1 JOIN diagnoses AS T2 ON T1.subject_id  =  T2.subject_id JOIN demographic AS T3 ON T1.subject_id  =  T3.subject_id WHERE T1.CATEGORY  =  'Chemistry' AND T2.ICD9_CODE  =  '410.93' AND T3.ADMITTIME  =  'initial episode of care'
+SELECT count(DISTINCT T2.HADM_ID) FROM lab AS T1 JOIN diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.itemid  =  'spinal tap' AND T2.icd9_code  =  'unspecified encephalopathy'
+SELECT count(drug_type) FROM diagnoses JOIN prescriptions ON diagnoses.hadm_id  =  prescriptions.hadm_id WHERE icd9_code  =  'abdominal pain' AND drug_type  =  'main'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Prescriptions AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  'other dysphagia' AND T3.DRUG_TYPE  =  'base type drugs'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Prescriptions AS T1 JOIN Diagnoses AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.ROUTE  =  'nu' AND T2.ICD9_CODE  =  'hiv'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Diagnoses AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ICD9_CODE  =  'osteoarthrosis' AND T1.LONG_TITLE  =  'unspecified' AND T2.FLAG  =  'abnormal'
+SELECT count(DISTINCT T2.HADM_ID) FROM lab AS T1 JOIN diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.itemid  =  'hematology lab test' AND T2.ICD9_CODE  =  'wegener''s granulomatosis'
+SELECT count(DISTINCT T1.subject_id) FROM lab AS T1 JOIN demographic AS T2 ON T1.subject_id  =  T2.subject_id WHERE T1.itemid  =  1750 AND T1.itemid  =  1999 AND T2.admittime  =  2008
+SELECT count(DISTINCT T2.subject_id) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.subject_id  =  T2.subject_id WHERE T2.itemid  =  'residual foreign body in soft tissue' AND T2.itemid  =  'blood gas'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Lab AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  'interstitial emphysema' AND T3.ITEMID  =  'blood gas'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Lab AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.LONG_TITLE  =  'morbid obesity' AND T3.CATEGORY  =  'chemistry'
+SELECT count(DISTINCT T2.itemid) FROM lab AS T1 JOIN prescriptions AS T2 ON T1.itemid  =  T2.drug_type WHERE T1.itemid  =  'base'
+SELECT count(DISTINCT T1.subject_id) FROM prescriptions AS T1 JOIN lab AS T2 ON T1.subject_id  =  T2.subject_id WHERE T1.drug_type  =  'main' AND T2.itemid  =  'ammonia'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Prescriptions AS T1 JOIN Lab AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.DRUG_TYPE  =  'main' AND T2.ITEMID  =  'manual reticulocyte count'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Prescriptions AS T1 JOIN Lab AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.DRUG_TYPE  =  'main' AND T2.ITEMID  =  'total protein' AND T2.ITEMID  =  'urine'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Prescriptions AS T1 JOIN Lab AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.DRUG_TYPE  =  'main' AND T2.ITEMID  =  'total protein' AND T2.ITEMID  =  'csf'
+SELECT DOD FROM Demographic WHERE SUBJECT_ID = 2560
+SELECT ADMISSION_TYPE ,  DOD FROM Demographic WHERE SUBJECT_ID  =  2560
+SELECT GENDER ,  INSURANCE FROM Demographic WHERE SUBJECT_ID  =  81923
+SELECT ADMITTIME FROM Demographic WHERE SUBJECT_ID  =  29961
+SELECT DOB ,  ADMISSION_LOCATION FROM Demographic WHERE SUBJECT_ID  =  3343 
+SELECT SHORT_TITLE FROM Procedures WHERE SUBJECT_ID  =  74032
+SELECT DAYS_STAY ,  FLAG FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.SUBJECT_ID  =  74032 AND T2.SUBJECT_ID  =  74032
+SELECT ADMITTIME ,  DRUG_DOSE FROM Demographic WHERE SUBJECT_ID  =  74032
+SELECT T1.LONG_TITLE ,  T2.ICUSTAY_ID FROM Procedures AS T1 JOIN Demographic AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.SUBJECT_ID  =  74032
+SELECT T1.HADM_ID ,  T2.DRUG_TYPE FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.SUBJECT_ID  =  74032
+SELECT T1.ICD9_CODE ,  T2.ADMITTIME ,  T2.DISCHTIME FROM Diagnoses AS T1 JOIN Demographic AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.SUBJECT_ID  =  52012 
+SELECT ADMISSION_TYPE ,  EXPIRE_FLAG FROM Demographic WHERE SUBJECT_ID  =  16438
+SELECT charttime ,  label FROM lab WHERE subject_id  =  2110
+SELECT ETHNICITY FROM Demographic WHERE SUBJECT_ID = 55094
+SELECT ADMISSION_LOCATION ,  ADMISSION_TYPE FROM Demographic WHERE SUBJECT_ID  =  55094
+SELECT ADMISSION_LOCATION ,  DAYS_STAY FROM Demographic WHERE SUBJECT_ID  =  55094
+SELECT AGE ,  INSURANCE FROM Demographic WHERE SUBJECT_ID  =  31066
+SELECT T1.SHORT_TITLE ,  T2.ADMITTIME FROM Diagnoses AS T1 JOIN Demographic AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.SUBJECT_ID  =  30011 
+SELECT NAME ,  AGE FROM Demographic WHERE SUBJECT_ID  =  81254
+SELECT DAYS_STAY ,  DISCHTIME FROM Demographic WHERE SUBJECT_ID  =  9575
+SELECT DOB ,  ICD9_CODE FROM Demographic WHERE SUBJECT_ID  =  66411
+SELECT DOB ,  SHORT_TITLE FROM Demographic WHERE SUBJECT_ID  =  66411
+SELECT DOB ,  GENDER FROM Demographic WHERE SUBJECT_ID  =  17519
+SELECT GENDER ,  RELIGION FROM Demographic WHERE SUBJECT_ID  =  71798
+SELECT ICD9_CODE FROM Diagnoses AS T1 JOIN Demographic AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.SUBJECT_ID  =  92796 GROUP BY ICD9_CODE
+SELECT DOB ,  MARITAL_STATUS FROM Demographic WHERE SUBJECT_ID  =  92796
+SELECT ADMISSION_LOCATION ,  DISCHARGE_LOCATION FROM Demographic WHERE SUBJECT_ID  =  4589
+SELECT DISCHARGE_LOCATION ,  ICD9_CODE FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.SUBJECT_ID  =  91588
+SELECT INSURANCE FROM Demographic WHERE SUBJECT_ID  =  7578
+SELECT T1.ICD9_CODE ,  T2.ICD9_CODE FROM Diagnoses AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Demographic AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T3.SUBJECT_ID  =  18077
+SELECT DOB ,  GENDER FROM Demographic WHERE SUBJECT_ID  =  17570
+SELECT T1.ICD9_CODE ,  T2.ADMISSION_TYPE FROM Diagnoses AS T1 JOIN Demographic AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.SUBJECT_ID  =  28588 
+SELECT AGE ,  LANGUAGE FROM Demographic WHERE SUBJECT_ID  =  17595
+SELECT ADMISSION_TYPE ,  ICD9_CODE FROM Demographic WHERE SUBJECT_ID  =  18372
+SELECT T1.ICD9_CODE ,  T2.ITEMID FROM Diagnoses AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ITEMID  =  'Fluid' AND T1.HADM_ID  =  18372 
+SELECT ADMITTIME ,  ICD9_CODE FROM Demographic WHERE SUBJECT_ID  =  53707 
+SELECT ADMISSION_TYPE FROM Demographic WHERE SUBJECT_ID  =  42963
+SELECT LONG_TITLE FROM Procedures WHERE NAME  =  'Morgan Mcgee'
+SELECT DAYS_STAY ,  DOD FROM Demographic WHERE NAME  =  'elizabeth bateman' 
+SELECT AGE ,  GENDER FROM Demographic WHERE NAME  =  'paul dunn'
+SELECT DISTINCT ICD9_CODE ,  SHORT_TITLE FROM Diagnoses WHERE SUBJECT_ID  =  'Lue' AND HADM_ID  =  'White' 
+SELECT DRUG_TYPE FROM Prescriptions WHERE SUBJECT_ID  =  'evelyn lawrence'
+SELECT DOB ,  HADM_ID FROM Demographic WHERE NAME  =  'Troy Friedman'
+SELECT AGE ,  DAYS_STAY FROM Demographic WHERE NAME  =  'gus marques'
+SELECT DOB ,  ADMITTIME FROM Demographic WHERE NAME  =  'Lawrence Wibbens'
+SELECT ICD9_CODE ,  SHORT_TITLE FROM Diagnoses AS T1 JOIN Demographic AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.NAME  =  'robert hyden' 
+SELECT DOB FROM Demographic WHERE NAME  =  'Jane Dillard'
+SELECT SHORT_TITLE FROM Procedures WHERE NAME  =  'Jane Dillard'
+SELECT DISTINCT ICD9_CODE ,  SHORT_TITLE FROM Diagnoses WHERE SUBJECT_ID  =  'Michelle Skidmore'
+SELECT T1.NAME ,  T2.ICD9_CODE FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.NAME  =  'Bryant Johnson' 
+SELECT MARITAL_STATUS ,  ICD9_CODE FROM Demographic WHERE NAME  =  'hector blair'
+SELECT T2.ICD9_CODE ,  T1.ADMISSION_TYPE FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.NAME  =  'Dawn Cooper' 
+SELECT DOB ,  LANGUAGE FROM Demographic WHERE NAME  =  'Kurt Buczek'
+SELECT T1.ICD9_CODE ,  T2.ICD9_CODE FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Procedures AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T1.NAME  =  'travis hofman'
+SELECT ADMISSION_LOCATION FROM Demographic WHERE NAME  =  'edward schafer'
+SELECT LONG_TITLE FROM Diagnoses WHERE ICD9_CODE  =  42731
+SELECT short_title FROM procedures WHERE icd9_code = 3606
+SELECT SHORT_TITLE ,  LONG_TITLE FROM Procedures WHERE ICD9_CODE  =  3891
+SELECT DRUG_TYPE ,  ROUTE FROM Prescriptions WHERE DRUG  =  'fat emulsion 20%'
+SELECT DRUG_TYPE ,  ROUTE FROM Prescriptions WHERE DRUG  =  'ferrous sulfate'
+SELECT ROUTE ,  DRUG_DOSE FROM Prescriptions WHERE DRUG  =  'methylene blue 1%'
+SELECT DISTINCT DRUG_TYPE ,  ROUTE FROM Prescriptions WHERE DRUG  =  'sulfameth/trimethoprim ds'
+SELECT DRUG_TYPE ,  DRUG FROM Prescriptions WHERE DRUG  =  'Aloe Vesta 2-n-1 skin cond'
+SELECT DRUG_TYPE ,  ROUTE FROM Prescriptions WHERE DRUG  =  'onda4i'
+SELECT DRUG_TYPE ,  DRUG FROM Prescriptions WHERE FORMULARY_DRUG_CD  =  'pant40'
+SELECT DISTINCT Demographic.SUBJECT_ID FROM Demographic WHERE Demographic.DOB_YEAR  <  2034
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  'other specified surgical operations and procedures causing abnormal patient reaction, or later complication, without mention of misadventure at time of operation'
+SELECT T1.SUBJECT_ID FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_LOCATION  =  'accidents' OR T1.ADMISSION_LOCATION  =  'other specified places' AND T2.ICD9_CODE  =  'accidents'
+SELECT count(*) FROM Diagnoses WHERE SHORT_TITLE  =  'retention urine nos'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  'abnormal coagulation profile'
+SELECT count(DISTINCT Demographic.SUBJECT_ID) FROM Demographic JOIN Procedures ON Demographic.HADM_ID = Procedures.HADM_ID WHERE Procedures.SHORT_TITLE  =  'aortocor bypas- 2 cor art'
+SELECT T1.SUBJECT_ID FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.DRUG_TYPE  =  'ambi5'
+SELECT count(DISTINCT Demographic.SUBJECT_ID) FROM Demographic JOIN Prescriptions ON Demographic.HADM_ID = Prescriptions.HADM_ID WHERE DRUG_TYPE  =  'senn187'
+SELECT count(DISTINCT Demographic.SUBJECT_ID) FROM Demographic JOIN Lab ON Demographic.HADM_ID = Lab.HADM_ID WHERE Lab.ITEMID  =  50801
+SELECT COUNT (DISTINCT SUBJECT_ID) FROM Lab WHERE ITEMID  =  'renal epithelial cells'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.GENDER  =  'female' AND T2.ICD9_CODE  =  'mesentric ischemia'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.GENDER  =  'male' AND T2.ICD9_CODE  =  '28521'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.GENDER  =  'male' AND T2.ICD9_CODE  =  'sarcoidosis'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'emergency' AND T2.ICD9_CODE  =  'coronary atherosclerosis of native coronary artery'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'elective' AND T2.LABEL  =  'triglycer'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.INSURANCE  =  'Medicare' AND T2.LONG_TITLE  =  'Pacemaker Insertion'
+SELECT count(*) FROM Demographic WHERE PRIMARY_DIAGNOSIS  =  'coronary artery disease' OR PRIMARY_DIAGNOSIS  =  'coronary artery bypass graft /sda' AND DOB_YEAR  <  2095
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOB_YEAR  <  2111 AND T2.ICD9_CODE  =  'cholangitis'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOB_YEAR  <  2101 AND T2.ICD9_CODE  =  'sepsis'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  'pneumonia' AND T1.DOD  <=  2155
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Lab AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T1.DOD_YEAR  <=  2131 AND T2.ICD9_CODE  =  '464.0' AND T3.ITEMID  =  '100000000'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Diagnoses AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.FLUID  =  'blood'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Lab AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  'left colon cancer' AND T3.ITEMID  =  'urine test'
+SELECT count(*) FROM Demographic WHERE AGE  <  76 AND DAYS_STAY  >  27
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  56 AND T2.DRUG  =  "benztropine mesylate"
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  86 AND T2.DRUG  =  "d5ns"
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Prescriptions AS T1 JOIN Demographic AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T2.AGE  <  83 AND T1.DRUG  =  "fent100t"
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  63 AND T2.ITEMID  =  51098
+SELECT T1.SUBJECT_ID FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  50 AND T2.ITEMID  =  50952
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  77 AND T2.ITEMID  =  51032
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM lab AS T1 JOIN demographic AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.ITEMID  =  51484 AND T2.AGE  <  56
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  4 AND T2.ICD9_CODE  =  45821
+SELECT count(*) FROM Demographic WHERE ADMISSION_TYPE  =  'transvenous lead [electrode] into ventricle' AND DAYS_STAY  >  9
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2157 AND T2.LONG_TITLE  =  "open reduction of fracture with internal fixation, femur"
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Lab AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  'angioneurotic edema' AND T3.FLAG  =  'abnormal'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Prescriptions AS T1 JOIN Diagnoses AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.DRUG_TYPE  =  'main' AND T2.ICD9_CODE  =  'coronary atherosclerosis of unspecified type of vessel, native or graft'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID JOIN Diagnoses AS T3 ON T1.SUBJECT_ID  =  T3.SUBJECT_ID WHERE T2.ROUTE  =  'po' AND T3.ICD9_CODE  =  'cellulitis' AND T3.ICD9_CODE  =  'abscess' AND T3.ICD9_CODE  !=  'foot'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Lab AS T1 JOIN Diagnoses AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.ITEMID  =  'hematology' AND T2.ICD9_CODE  =  'unspecified chronic obstructive asthma'
+SELECT ICD9_CODE FROM Diagnoses WHERE SUBJECT_ID  =  2560
+SELECT LONG_TITLE ,  ICD9_CODE FROM Diagnoses WHERE SUBJECT_ID  =  7578
+SELECT ICD9_CODE ,  DAYS_STAY FROM Diagnoses AS T1 JOIN Demographic AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.SUBJECT_ID  =  28588 
+SELECT DAYS_STAY FROM Demographic WHERE SUBJECT_ID  =  18112
+SELECT DAYS_STAY ,  LABEL FROM Demographic WHERE SUBJECT_ID  =  32418
+SELECT T1.LONG_TITLE ,  T2.LONG_TITLE FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Procedures AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T1.SUBJECT_ID  =  22377
+SELECT DOB ,  GENDER FROM Demographic WHERE SUBJECT_ID  =  87275
+SELECT T1.LONG_TITLE ,  T1.ICD9_CODE FROM Diagnoses AS T1 JOIN Demographic AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.SUBJECT_ID  =  1875 
+SELECT ICD9_CODE FROM Diagnoses WHERE SUBJECT_ID  =  42963
+SELECT SHORT_TITLE ,  LONG_TITLE FROM Diagnoses AS T1 JOIN Demographic AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.SUBJECT_ID  =  11221
+SELECT ADMITTIME ,  DAYS_STAY FROM Demographic WHERE NAME  =  'Paul Edwards'
+SELECT T1.SHORT_TITLE ,  T2.DISCHTIME FROM Diagnoses AS T1 JOIN Demographic AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.SUBJECT_ID  =  'cynthia robinson' 
+SELECT T1.SHORT_TITLE ,  T2.SHORT_TITLE FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Procedures AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T1.SUBJECT_ID  =  "Lue White"
+SELECT ICD9_CODE ,  DAYS_STAY FROM Diagnoses AS T1 JOIN Demographic AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.NAME  =  'Claude Chipman' 
+SELECT DISTINCT ICD9_CODE ,  SHORT_TITLE FROM Diagnoses AS T1 JOIN Demographic AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.NAME  =  'Claude Chipman' 
+SELECT AGE ,  GENDER FROM Demographic WHERE NAME  =  'Cynthia Gomez'
+SELECT ADMITTIME ,  DISCHTIME FROM Demographic WHERE NAME  =  'Alice Nixon'
+SELECT Demographic.ADMITTIME, Demographic.DISCHTIME, Prescriptions.DRUG FROM Demographic JOIN Prescriptions ON Demographic.HADM_ID = Prescriptions.HADM_ID WHERE Demographic.NAME = 'dona cole' 
+SELECT T1.ICD9_CODE ,  T2.DRUG FROM Diagnoses AS T1 JOIN Prescriptions AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID AND T1.HADM_ID  =  T2.HADM_ID AND T1.ICUSTAY_ID  =  T2.ICUSTAY_ID WHERE T1.SUBJECT_ID  =  'marilyn norvell'
+SELECT ICD9_CODE ,  ADMITTIME ,  DISCHTIME FROM Diagnoses AS T1 JOIN Demographic AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.SUBJECT_ID  =  'troy friedman' 
+SELECT T1.ICD9_CODE ,  T2.DISCHTIME FROM Demographic AS T2 JOIN Diagnoses AS T1 ON T2.HADM_ID  =  T1.HADM_ID WHERE T2.NAME  =  'robert hyden' 
+SELECT Demographic.ADMITTIME ,  Diagnoses.SHORT_TITLE FROM Demographic JOIN Diagnoses ON Demographic.HADM_ID = Diagnoses.HADM_ID WHERE Demographic.NAME  =  'thomas nazario'
+SELECT ADMITTIME ,  LONG_TITLE FROM Demographic WHERE NAME  =  'roxanna weaver' 
+SELECT DOB ,  ICD9_CODE FROM Demographic WHERE NAME  =  'Brian Brock' 
+SELECT T1.SHORT_TITLE ,  T2.DOD FROM Diagnoses AS T1 JOIN Demographic AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.NAME  =  'Travis Hofman' 
+SELECT LONG_TITLE ,  ICD9_CODE FROM Diagnoses AS T1 JOIN Demographic AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.NAME  =  'caren obrien' 
+SELECT DAYS_STAY ,  SHORT_TITLE FROM Demographic WHERE NAME  =  'Miguel Hodges' 
+SELECT SHORT_TITLE ,  LONG_TITLE FROM Diagnoses WHERE ICD9_CODE  =  'e912'
+SELECT SHORT_TITLE ,  LONG_TITLE FROM Diagnoses WHERE ICD9_CODE  =  317
+SELECT ROUTE FROM Prescriptions WHERE DRUG  =  'Indomethacin'
+SELECT DRUG_TYPE FROM Prescriptions WHERE DRUG  =  'enalaprilat'
+SELECT DRUG_TYPE FROM Prescriptions WHERE DRUG  =  'nafcillin'
+SELECT DRUG_CODE FROM Prescriptions WHERE DRUG_TYPE  =  'Methylene blue' AND DRUG  =  '1%'
+SELECT ROUTE ,  DRUG_TYPE FROM Prescriptions WHERE DRUG_TYPE  =  'diazepam'
+SELECT DRUG_TYPE FROM Prescriptions WHERE DRUG  =  'cipr500'
+SELECT count(*) FROM Demographic WHERE ETHNICITY  =  'ptun'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  'aortic valve insufficiency' OR T2.ICD9_CODE  =  'aortic valve replacement' OR T2.ICD9_CODE  =  'sda'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  '40291'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  'colangitis'
+SELECT count(*) FROM Demographic WHERE AGE < 70
+SELECT count(*) FROM Demographic WHERE DAYS_STAY  >  3
+SELECT count(*) FROM Demographic WHERE DAYS_STAY  >  4
+SELECT count(*) FROM Demographic WHERE DAYS_STAY  >  6
+SELECT COUNT (DISTINCT SUBJECT_ID) FROM Demographic WHERE DOD_YEAR  <=  2122
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  'chr airway obstruct nec'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  'other respiratory problems'
+SELECT count(DISTINCT Diagnoses.SUBJECT_ID) FROM Diagnoses WHERE Diagnoses.ICD9_CODE  =  'mv collision nos-driver' 
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.SHORT_TITLE  =  'chr syst/diastl hrt fail'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  '428.0' 
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  'closed fracture of t1-t6 level' OR T2.ICD9_CODE  =  'other specified spinal cord injury'
+SELECT T1.SUBJECT_ID FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  'hemiplegia' AND T2.ICD9_CODE  =  'unspecified' AND T2.ICD9_CODE  =  'affecting dominant side'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  4610
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  8968
+SELECT T1.SUBJECT_ID FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  12
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  9229
+SELECT count(*) FROM Procedures WHERE ICD9_CODE  =  17
+SELECT count(*) FROM Prescriptions WHERE DRUG_TYPE  =  'base'
+SELECT count(DISTINCT Demographic.SUBJECT_ID) FROM Demographic JOIN Prescriptions ON Demographic.HADM_ID = Prescriptions.HADM_ID WHERE Prescriptions.DRUG_TYPE  =  'main'
+SELECT count(*) FROM Lab WHERE VALUE_UNIT  =  'sodium citrate 4%'
+SELECT count(DISTINCT Demographic.HADM_ID) FROM Demographic JOIN Prescriptions ON Demographic.HADM_ID = Prescriptions.HADM_ID WHERE DRUG  =  '0.9% sodium chloride (mini bag plus)' 
+SELECT count(*) FROM Prescriptions WHERE DRUG  =  'methadone'
+SELECT count(DISTINCT SUBJECT_ID) FROM Prescriptions WHERE DRUG_TYPE  =  'meto25'
+SELECT T1.SUBJECT_ID FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.DRUG_CODE  =  'levo500pm'
+SELECT COUNT (DISTINCT SUBJECT_ID) FROM Prescriptions WHERE DRUG  =  'diaz5'
+SELECT count(DISTINCT Demographic.SUBJECT_ID) FROM Demographic JOIN Prescriptions ON Demographic.HADM_ID = Prescriptions.HADM_ID WHERE DRUG  =  'lora1'
+SELECT COUNT (DISTINCT SUBJECT_ID) FROM Prescriptions WHERE DRUG_TYPE  =  'gent60pm'
+SELECT count(*) FROM Prescriptions WHERE DRUG_CODE  =  'calcg2/100ns'
+SELECT COUNT (DISTINCT SUBJECT_ID) FROM Prescriptions WHERE DRUG  =  'phos250'
+SELECT count(DISTINCT SUBJECT_ID) FROM Prescriptions WHERE DRUG_TYPE  =  'calc25'
+SELECT T1.SUBJECT_ID FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ROUTE  =  'ivpca'
+SELECT count(DISTINCT Demographic.SUBJECT_ID) FROM Demographic JOIN Prescriptions ON Demographic.HADM_ID = Prescriptions.HADM_ID WHERE ROUTE  =  'iv'
+SELECT T1.SUBJECT_ID FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ITEMID  =  'wbc'
+SELECT count(DISTINCT Demographic.SUBJECT_ID) FROM Demographic JOIN Lab ON Demographic.HADM_ID = Lab.HADM_ID WHERE Lab.ITEMID = 'gentamicin'
+SELECT count(*) FROM Demographic WHERE MARITAL_STATUS  =  'divorced' AND GENDER  =  'female'
+SELECT count(*) FROM Demographic WHERE ETHNICITY  =  'white-russian' AND MARITAL_STATUS  =  'divorced'
+SELECT count(*) FROM Demographic WHERE ETHNICITY  =  'white' AND MARITAL_STATUS  =  'divorced'
+SELECT count(*) FROM Demographic WHERE ETHNICITY  =  'American Indian/Alaska native' AND MARITAL_STATUS  =  'married'
+SELECT count(*) FROM Demographic WHERE ADMITTIME  <  2178 AND SUBJECT_ID NOT IN (SELECT SUBJECT_ID FROM Demographic WHERE ADMITTIME  <  2178 GROUP BY SUBJECT_ID HAVING count(*)  >  1)
+SELECT count(*) FROM Demographic WHERE MARITAL_STATUS  =  'Unmarried' AND ADMITTIME  <  2180
+SELECT count(*) FROM Demographic WHERE MARITAL_STATUS  =  'married' AND ADMITTIME  <  2103
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.MARITAL_STATUS  =  'married' AND T2.ICD9_CODE  =  25541
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.MARITAL_STATUS  =  'N' AND T2.ICD9_CODE  =  '4254'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.MARITAL_STATUS  =  'Widow' AND T2.ICD9_CODE  =  'vascular hamartomas'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.MARITAL_STATUS  =  'married' AND T2.ICD9_CODE  =  'dmii renl nt st unctrld'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 WHERE T1.MARITAL_STATUS  =  'unmarried' AND T1.SUBJECT_ID IN (SELECT DISTINCT T2.SUBJECT_ID FROM Diagnoses AS T2 WHERE T2.ICD9_CODE  =  'personality disorder nos')
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.MARITAL_STATUS  =  'married' AND (T2.ICD9_CODE  =  'depressive disorder' OR T2.ICD9_CODE  =  'not elsewhere classified')
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.MARITAL_STATUS  =  'Widowed' AND T2.LONG_TITLE  =  'benign neoplasm of spinal meninges'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.MARITAL_STATUS  =  'unmarried' AND T2.ICD9_CODE  =  'other chronic pulmonary heart disease'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.MARITAL_STATUS  =  'N' AND T2.ICD9_CODE  =  '360.0'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.MARITAL_STATUS  =  'N' AND T2.ICD9_CODE  =  8960
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.LONG_TITLE  =  'abdominal wall incision'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.MARITAL_STATUS  =  'Widowed' AND T2.LONG_TITLE  =  'percutaneous (endoscopic) jejunostomy [pej]'
+SELECT count(*) FROM Demographic WHERE MARITAL_STATUS  =  'unmarried' AND open  =  'open' AND other  =  'other'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.MARITAL_STATUS  =  'Married' AND T2.LONG_TITLE  =  'percutaneous [endoscopic] gastrostomy [peg] procedure'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T2.VALUE_UNIT  =  'married' AND T2.CATEGORY  =  'non-invasive mechanical ventilation'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ROUTE  =  'ng'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.MARITAL_STATUS  =  'unmarried' AND T2.ROUTE  =  'dialys'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Prescriptions AS T1 JOIN Demographic AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID JOIN Lab AS T3 ON T1.SUBJECT_ID  =  T3.SUBJECT_ID WHERE T2.MARITAL_STATUS  =  'divorced' AND T3.ROUTE  =  'iv drip'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.MARITAL_STATUS  =  'married' AND T2.ITEMID  =  51382
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.MARITAL_STATUS  =  'married' AND T2.ITEMID  =  51446
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Lab AS T1 JOIN Demographic AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T2.MARITAL_STATUS  =  'divorced' AND T1.ITEMID  =  51181
+SELECT count(DISTINCT T2.itemid) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ITEMID  =  'hematocrit' AND T1.MARITAL_STATUS  =  'Widow'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.MARITAL_STATUS  =  'Single' AND T2.ITEMID  =  'transferrin'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.MARITAL_STATUS  =  'Widowed' AND T2.ITEMID  =  'cerebrospinal fluid (csf)'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.MARITAL_STATUS  =  'widowed' AND T2.FLUID  =  'ascites'
+SELECT count(DISTINCT T2.ITEMID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.MARITAL_STATUS  =  'unmarried' AND T2.ITEMID  =  'clinical chemistry'
+SELECT count(*) FROM Demographic WHERE INSURANCE  =  'medicaid' AND GENDER  =  'female'
+SELECT count(*) FROM Demographic WHERE INSURANCE  =  'medicare' AND GENDER  =  'female'
+SELECT count(*) FROM Demographic WHERE ETHNICITY  =  'black/cape verdean' AND GENDER  =  'male'
+SELECT count(*) FROM Demographic WHERE ETHNICITY  =  'american indian/alaska native' AND GENDER  =  'male'
+SELECT count(*) FROM Demographic WHERE EXPIRE_FLAG  =  'dead/expired' AND GENDER  =  'male'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.GENDER  =  "female" AND T2.ICD9_CODE  =  "sdh" GROUP BY T1.SUBJECT_ID
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.GENDER  =  'female' AND T2.ICD9_CODE  =  'left femur fracture'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  'liver transplant' AND T1.GENDER  =  'female'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  'female' AND T2.ICD9_CODE  =  'overdose'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.GENDER  =  'female' AND T2.ICD9_CODE  =  'st-segment elevation myocardial infarction/cardiac catheterization primary disease'
+SELECT count(*) FROM Demographic WHERE AGE  <  67 AND GENDER  =  'F'
+SELECT count(*) FROM Demographic WHERE AGE  <  41 AND GENDER  =  'F'
+SELECT count(*) FROM Demographic WHERE AGE  <  74 AND GENDER  =  'M'
+SELECT count(*) FROM Demographic WHERE GENDER  =  'F' AND DAYS_STAY  >  9
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.SHORT_TITLE  =  'depress psychosis-unspec' AND T1.GENDER  =  'F'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  'female' AND T2.ICD9_CODE  =  'ulcer of heel & mid foot'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  'follicular cyst of ovary' AND T1.GENDER  =  'female'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.GENDER  =  'female' AND T2.LONG_TITLE  =  'joint replaced knee'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.SHORT_TITLE  =  'hx-skin malignancy nec' AND T1.GENDER  =  'F'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.GENDER  =  'female' AND T2.ICD9_CODE  =  'gram-negative sepsis'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DIAGNOSIS  =  'anemia' AND T1.DIAGNOSIS  =  'chronic kidney disease' AND T1.GENDER  =  'male'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T2.VALUE_UNIT  =  'female' AND T2.LABEL  =  'kidney dialysis' AND T2.FLAG  =  'abnormal reaction' OR T2.FLAG  =  'complication'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.GENDER  =  'male' AND T1.ADMISSION_LOCATION  =  'residential institution'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.GENDER  =  'male' AND T2.ICD9_CODE  =  'anemia' AND T2.LONG_TITLE  =  'neoplastic disease'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.GENDER  =  'male' AND T2.ICD9_CODE  =  'aortocor bypass-2 cor art'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.GENDER  =  'female' AND T2.LONG_TITLE  =  'intraoperative cardiac pacemaker'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.GENDER  =  'female' AND T2.LONG_TITLE  =  'replacement of tube or enterostomy device of the small intestine'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.SHORT_TITLE  =  'female' AND (T2.SHORT_TITLE  =  'endovascular (total) embolization' OR T2.SHORT_TITLE  =  'occlusion of head and neck vessels')
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ITEMID  =  'umbilical vein catheterization' AND T1.GENDER  =  'male'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.GENDER  =  'male' AND T2.DRUG  =  'rosiglitazone maleate'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ITEMID  =  51144 AND T1.GENDER  =  'M'
+SELECT count(*) FROM Demographic WHERE ETHNICITY  =  'romanian' AND RELIGION  =  'eastern' AND LANGUAGE  =  'orthodox' AND RELIGION  =  'catholic' AND LANGUAGE  =  'spanish'
+SELECT count(*) FROM Demographic WHERE LANGUAGE  =  'Russian' AND ADMISSION_TYPE  =  'snf'
+SELECT count(*) FROM Demographic WHERE LANGUAGE  =  'English' AND AGE  <  36
+SELECT count(*) FROM Demographic WHERE DAYS_STAY  >  4 AND LANGUAGE  =  'Portuguese'
+SELECT count(*) FROM Demographic WHERE DOB_YEAR  <  2064 AND LANGUAGE  =  'ptun'
+SELECT count(*) FROM Demographic WHERE DOB_YEAR  <  2069 AND LANGUAGE  =  'english'
+SELECT count(*) FROM Demographic WHERE ETHNICITY  =  'Jewish' AND ADMITTIME  <  2145
+SELECT count(*) FROM Demographic WHERE ETHNICITY  =  'Jewish' AND ADMITTIME  <  2146
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.RELIGION  =  'Romanian Eastern Orthodox Christian' AND T2.ICD9_CODE  =  'accidents' AND T2.SHORT_TITLE  =  'other specific places'
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.RELIGION  =  'Episcopalian' AND T2.ICD9_CODE  =  'Personal history of malignant neoplasm of large intestine'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Lab AS T1 JOIN Demographic AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.ITEMID  =  51251 AND T2.RELIGION  =  'Romanian Eastern Orthodox Christianity'
+SELECT count(DISTINCT T2.itemid) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ITEMID  =  'CD3' AND T1.RELIGION  =  'Catholic'
+SELECT count(*) FROM Demographic WHERE ADMISSION_TYPE  =  'phys referral' OR ADMISSION_TYPE  =  'normal deli'
+SELECT count(*) FROM Demographic WHERE ADMISSION_LOCATION  =  'emergency hospital room'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  'stemi'
+SELECT count(DISTINCT T2.HADM_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'emergency room' AND T2.ICD9_CODE  =  'squamous cell carcinoma oral tongue/sda'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_LOCATION  =  'Emergency' AND T2.ICD9_CODE  =  '55.55'
+SELECT count(*) FROM Demographic WHERE AGE < 68
+SELECT count(*) FROM Demographic WHERE ADMISSION_TYPE  =  'urgent' AND DAYS_STAY  >  4
+SELECT count(*) FROM Demographic WHERE DAYS_STAY  >  8
+SELECT count(*) FROM Demographic WHERE ADMITTIME  <  '2203-01-01' AND ADMISSION_TYPE  =  'elective'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'urgent' AND T2.ICD9_CODE  =  99813
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'urgent' AND T2.ICD9_CODE  =  5939
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'elective' AND T2.ICD9_CODE  =  '42789'
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'urgent' AND T2.ICD9_CODE  =  'poison-psychotropic agent'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'elective' AND T2.ICD9_CODE  =  'blood in stool'
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'elective' AND T2.ICD9_CODE  =  'other and unspecified open wound of head' AND T2.ICD9_CODE  NOT LIKE  '%complication%'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'urgent' AND T1.ADMITTIME  >  '2010-01-01' AND T1.ADMITTIME  <  '2010-12-31' AND T2.ICD9_CODE  =  'other shock' AND T2.ICD9_CODE  =  'no trauma'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  4610 AND T1.ADMISSION_TYPE  =  'urgent'
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  4611
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'Emergency' AND T2.ICD9_CODE  =  309
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_LOCATION  =  'EMERGENCY' AND T2.ICD9_CODE  =  5185
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'emergency' AND T2.ICD9_CODE  =  66
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'urgent' AND T2.ICD9_CODE  =  'spinal tap'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'emergency' AND T2.LONG_TITLE  =  'nasal sinus dx proc nec'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'urgent' AND T2.LONG_TITLE  =  'open' OR T2.LONG_TITLE  =  'other right hemicolectomy'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'elective' AND T2.LONG_TITLE  =  '(aorto)coronary bypass of three coronary arteries'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  'fiber-optic bronchoscopy procedure'
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.LONG_TITLE  =  'Incision of vessel' OR T2.LONG_TITLE  =  'Abdominal arteries'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.DRUG  =  'metronidazole'
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.DRUG  =  'vitamin d'
+SELECT T1.SUBJECT_ID FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'elective' AND T2.DRUG  =  'succinylcholine'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.DRUG  =  'calcium carbonate'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'Emergency' AND T2.DRUG  =  'Vitamin B Complex'
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.DRUG  =  'famvir' AND T1.ADMISSION_TYPE  =  'elective'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'urgent' AND T2.DRUG  =  'aspirin'
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.DRUG  =  'milk of magnesia'
+SELECT DISTINCT T1.SUBJECT_ID FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'urgent' AND T2.ROUTE  =  'ou'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ROUTE  =  'NEB'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ROUTE  =  'neb'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'urgent' AND T2.ITEMID  =  50980
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'elective' AND T2.ITEMID  =  51256
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'elective' AND T2.ITEMID  =  51466
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ITEMID  =  50927
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'newborn' AND T2.ITEMID  =  51276
+SELECT count(DISTINCT T2.itemid) FROM demographic AS T1 JOIN lab AS T2 ON T1.hadm_id  =  T2.hadm_id WHERE T2.ITEMID  =  10000000 AND T1.ADMISSION_TYPE  =  'Urgent Care'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'urgent' AND T2.ITEMID  =  'glucose' AND T2.ITEMID  =  'body fluid' 
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'elective' AND T2.ITEMID  =  'mesothelial cells'
+SELECT count(DISTINCT T2.itemid) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.hadm_id  =  T2.hadm_id WHERE T1.admission_type  =  'Emergency' AND T2.itemid  =  'Lymphs'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'emergency' AND T2.LABEL  =  'cd3 cells percentage'
+SELECT count(*) FROM Demographic WHERE INSURANCE  =  'Government' AND ADMISSION_TYPE  =  'Emergency Room'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.INSURANCE  =  'medicaid' AND T2.ICD9_CODE  =  'st elevated myocardial infarction\cardiac cath'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  'pneumonia' AND T1.INSURANCE  =  'medicaid'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.INSURANCE  =  'medicaid' AND (T2.ICD9_CODE  =  'coronary artery disease' OR T2.ICD9_CODE  =  'coronary artery bypass graft/sda')
+SELECT count(*) FROM Demographic WHERE INSURANCE  =  'private' AND DAYS_STAY  >  8
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.INSURANCE  =  'Medicare' AND T2.ICD9_CODE  =  '79439'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.INSURANCE  =  'medicaid' AND T2.SHORT_TITLE  =  'drug induced neutropenia'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.INSURANCE  =  'Self-pay' AND T2.ICD9_CODE  =  'Gastric/Duodenal NOS' AND T2.ICD9_CODE  !=  'Hemorrhage'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.INSURANCE  =  'Medicare' AND T2.ICD9_CODE  =  'iatrogenic hypotension nec'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.INSURANCE  =  'no insurance' AND T2.ICD9_CODE  =  'parox ventric tachycard'
+SELECT count(*) FROM Demographic WHERE INSURANCE  =  'government' AND DIAGNOSIS  =  'Alzheimer''s disease'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Diagnoses AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T1.INSURANCE  =  'Medicare' AND T2.VALUE_UNIT  <  19 AND T3.SHORT_TITLE  =  'Adult'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.INSURANCE  =  'medicare' AND T2.ICD9_CODE  =  '410.93' AND T1.ADMISSION_TYPE  =  'initial episode of care'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.INSURANCE  =  'private' AND T2.ICD9_CODE  =  'ureteral catheterization procedure'
+SELECT count(INSURANCE) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.INSURANCE  =  'Government' AND T2.LONG_TITLE  =  'Incision of aorta'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.INSURANCE  =  'Government Health Insurance' AND T2.LONG_TITLE  =  'Other Radiotherapeutic Procedure'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.INSURANCE  =  'government' AND T2.LONG_TITLE  =  'aortocor bypas-2 cor art'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.INSURANCE  =  'Government' AND T2.LONG_TITLE  =  'open reduction of int fix femur'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.INSURANCE  =  'Medicaid' AND T2.LONG_TITLE  =  'Conduit Left Ventricle to Aorta'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.INSURANCE  =  'Government Insurance' AND T2.ICD9_CODE  =  'colonoscopy'
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.INSURANCE  =  'Government Health Insurance' AND T2.LONG_TITLE  =  'Radical Cystectomy'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.INSURANCE  =  'Government Insurance' AND T2.LONG_TITLE  =  'Drug Detoxification Procedure'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.INSURANCE  =  'Government Health Insurance' AND T2.LONG_TITLE  =  'Umbilical vein catheterization'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.INSURANCE  =  'government' AND T2.LONG_TITLE  =  'Local excision of lesion or tissue of bone, scapula, clavicle, and thorax (ribs and sternum)'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.INSURANCE  =  'self pay' AND T2.LONG_TITLE  =  'open biopsy of soft tissue'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.INSURANCE  =  'Self Pay' AND T2.LONG_TITLE  =  'other unilateral salpingo-oophorectomy'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.INSURANCE  =  'medicare' AND T2.LABEL  =  'albumin/creatinine' OR T2.LABEL  =  'urine'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.INSURANCE  =  'Medicare' AND T2.LABEL  =  'Automated Reticulocyte Count'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ETHNICITY  =  'black' OR T1.ETHNICITY  =  'cape verdean' AND T2.ICD9_CODE  =  'aortic valve insufficiency' OR T2.ICD9_CODE  =  'aortic valve replacement' OR T2.ICD9_CODE  =  'sda'
+SELECT count(*) FROM Demographic WHERE ETHNICITY  =  'black/african american' AND AGE  <  80
+SELECT count(*) FROM Demographic WHERE ETHNICITY  =  'ASIAN' AND AGE  <  47
+SELECT count(*) FROM Demographic WHERE ETHNICITY  =  'Black/African American' AND DAYS_STAY  >=  1
+SELECT count(*) FROM Demographic WHERE ETHNICITY  =  'white' AND ETHNICITY  =  'russian' AND DOB_YEAR  <  2101
+SELECT count(*) FROM Demographic WHERE ETHNICITY  =  'white' AND ETHNICITY  =  'russian' AND DOB_YEAR  <  1846
+SELECT count(*) FROM Demographic WHERE ETHNICITY  =  'hispanic or latino' AND DOB_YEAR  <  2109
+SELECT count(*) FROM Demographic WHERE ETHNICITY  =  'Hispanic or Latino - Puerto Rican' AND DOB_YEAR  <  2200
+SELECT count(*) FROM Demographic WHERE ETHNICITY  =  'asian' AND DOD_YEAR  <=  2148
+SELECT count(*) FROM Demographic WHERE ETHNICITY  =  'American Indian/Alaska Native' AND ADMITTIME  <  2139
+SELECT count(*) FROM Demographic WHERE ETHNICITY  =  'american indian/alaska native' AND ADMITTIME  <  2144
+SELECT count(DISTINCT T2.hadm_id) FROM diagnoses AS T1 JOIN demographic AS T2 ON T1.hadm_id  =  T2.hadm_id WHERE T1.ICD9_CODE  =  7069 AND T2.ethnicity  =  'white'
+SELECT count(DISTINCT T2.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ETHNICITY  =  'hispanic or latino' AND T2.ICD9_CODE  =  'crbl art ocl nos w infrc'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ETHNICITY  =  'white' AND T2.ICD9_CODE  =  'retained plastic fragments'
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ETHNICITY  =  'ASIAN' AND T2.SHORT_TITLE  =  'Suicidal Ideation'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ETHNICITY  =  'white' AND T2.ICD9_CODE  =  'mechanical complication due to other implant and internal device, not elsewhere classified'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ETHNICITY  =  'asian' AND T2.SHORT_TITLE  =  'major depressive affective disorder, single episode, unspecified'
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ETHNICITY  =  'white russian' AND T2.ICD9_CODE  =  '7855'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ETHNICITY  =  'white' AND T2.ICD9_CODE  =  'panic disorder' AND T2.ICD9_CODE NOT LIKE '%agoraphobia%'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ETHNICITY  =  'hispanic or latino' AND T2.ICD9_CODE  =  '3950'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.ETHNICITY  =  'hispanic' OR T1.ETHNICITY  =  'latino' AND T2.ITEMID  =  'closed liver biopsy'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ETHNICITY  =  'Asian' AND T2.LONG_TITLE  =  'Open Reduction of Femur Fracture with Internal Rotation'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ETHNICITY  =  'Black/African American' AND T2.ICD9_CODE  =  'other radiotherapeutic procedures'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ETHNICITY  =  'hispanic' OR T1.ETHNICITY  =  'latino' AND T2.LONG_TITLE  =  'other phototherapy'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ETHNICITY  =  'white-russian' AND T2.DRUG  =  'epoetin alfa'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ETHNICITY  =  'hispanic' OR T1.ETHNICITY  =  'latino' OR T1.ETHNICITY  =  'puerto rican' AND T2.DRUG  =  'sucralfate'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ETHNICITY  =  'asian' AND T2.DRUG  =  'loperamide'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ETHNICITY  =  'American Indian/Alaska native' AND T2.DRUG  =  'magnesium oxide'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ETHNICITY  =  'asian' AND T2.DRUG  =  'talc'
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ETHNICITY  =  'Hispanic or Latino or Puerto Rican' AND T2.DRUG  =  'syringe'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ROUTE  =  'ou' AND T1.ETHNICITY  =  'white'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ETHNICITY  =  'black' OR T1.ETHNICITY  =  'haitian' AND T2.ROUTE  =  'ed'
+SELECT count(DISTINCT T2.hadm_id) FROM lab AS T1 JOIN demographic AS T2 ON T1.hadm_id  =  T2.hadm_id WHERE T1.itemid  =  'potassium' AND T1.itemid  =  'urine' AND T2.ethnicity  =  'black/cape verdean'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ETHNICITY  =  'Black/Haitian' AND T2.ITEMID  =  'parathyroid hormone'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ETHNICITY  =  'American Indian/Alaska Native' AND T2.ITEMID  =  'pco2'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ETHNICITY  =  'hispanic or latino-puerto rican' AND T2.ITEMID  =  'whole blood potassium'
+SELECT count(DISTINCT T2.itemid) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ITEMID  =  'protein/creatinine ratio' AND T1.ETHNICITY  =  'black/african american'
+SELECT count(DISTINCT T2.itemid) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ITEMID  =  'total protein body fluid' AND T1.ETHNICITY  =  'white'
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.EXPIRE_FLAG  =  1 AND T2.ICD9_CODE  =  'aortic valve insuffiency\aortic valve replacement /sda'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD  IS NOT NULL AND T2.ICD9_CODE  =  'colangitis'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD  IS NOT NULL AND T2.ICD9_CODE  =  '416.0'
+SELECT count(*) FROM Demographic WHERE EXPIRE_FLAG  =  1 AND DAYS_STAY  >  26
+SELECT count(*) FROM Demographic WHERE DOB_YEAR  <  2085 AND DOD_YEAR  IS NOT NULL
+SELECT count(*) FROM Demographic WHERE DOB_YEAR  <  2090 AND EXPIRE_FLAG  =  1
+SELECT count(*) FROM Demographic WHERE DOD  <  DOB AND DOB_YEAR  <  2097
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 WHERE T1.DOD  =  'unspecified' AND T1.HADM_ID IN (SELECT DISTINCT T2.HADM_ID FROM Diagnoses AS T2 WHERE T2.ICD9_CODE  =  78052)
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.EXPIRE_FLAG  =  0 AND T2.ICD9_CODE  =  'v4986'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD  IS NOT NULL AND T2.ICD9_CODE  =  53550
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD  IS NOT NULL AND T2.ICD9_CODE  =  99662
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD  IS NOT NULL AND T2.SHORT_TITLE  =  'alcoh dep nec/nos-unspec'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD  IS NOT NULL AND T2.ICD9_CODE  =  '00000' AND T2.SHORT_TITLE  =  'methicillin susceptible pneumonia' AND T2.LONG_TITLE  =  'staphylococcus aureus'
+SELECT count(DISTINCT T2.ICD9_CODE) FROM Demographic AS T1 JOIN diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD  IS NOT NULL AND T2.ICD9_CODE  =  'esophageal reflux'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.EXPIRE_FLAG  =  1 AND T2.ICD9_CODE  =  '299.9'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD  =  1 AND T2.LONG_TITLE  =  'contusion of face, scalp, and neck except eye(s)'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.EXPIRE_FLAG  =  1 AND T2.LONG_TITLE  =  'tietze's disease'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD IS NOT NULL AND T2.ICD9_CODE  =  '296.4'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  540
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 WHERE T1.EXPIRE_FLAG  =  'unspecified' AND T1.SUBJECT_ID IN (SELECT DISTINCT T2.SUBJECT_ID FROM Demographic AS T2 WHERE T2.SUBJECT_ID IN (SELECT DISTINCT T3.SUBJECT_ID FROM Diagnoses AS T3 WHERE T3.ICD9_CODE  =  4513))
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD IS NOT NULL AND T2.ICD9_CODE  =  3152
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.EXPIRE_FLAG  =  0 AND T2.LONG_TITLE  =  'fiber-optic bronchoscopy'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD  IS NOT NULL AND T2.DRUG  =  'baclofen'
+SELECT count(DISTINCT T1.DOD) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.DRUG  =  'ondansetron odt'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.EXPIRE_FLAG  =  1 AND T2.DRUG_CODE  =  'alte 1/5i'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM lab AS T1 JOIN demographic AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ITEMID  =  'hemoglobin' AND T2.DOD IS NULL 
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Lab AS T1 JOIN Demographic AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ITEMID  =  'vancomycin' AND T2.EXPIRE_FLAG  =  0
+SELECT count(DISTINCT T2.itemid) FROM demographic AS T1 JOIN lab AS T2 ON T1.hadm_id  =  T2.hadm_id WHERE T2.itemid  =  'total protein' OR T2.itemid  =  'body fluid' AND T1.dod  IS NOT NULL
+SELECT count(*) FROM Demographic WHERE DISCHARGE_LOCATION  =  'skilled nursing facility'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID JOIN Lab AS T3 ON T2.ICD9_CODE  =  T3.ITEMID WHERE T3.LABEL  =  'left' AND T3.LABEL  =  'arm' AND T3.LABEL  =  'edema' AND T3.LABEL  =  'left' AND T3.LABEL  =  'internal' AND T3.LABEL  =  'jugular' AND T3.LABEL  =  'vein' AND T3.LABEL  =  'thrombosis'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_LOCATION  =  'clinic referral/premature' AND T2.ICD9_CODE  =  'ventricular tachycardia'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.ADMISSION_LOCATION  =  'clinic referral/premature' AND (T2.LONG_TITLE  =  'sigmoid diverticulitis' OR T2.LONG_TITLE  =  'colovestical fistula/sda')
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  'neoplasm of uncertain behavior of other lymphatic and hematopoietic tissues/bone marrow transplant'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_LOCATION  =  'phys referral/normal deli' AND T2.ICD9_CODE  =  'COPD'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'TRANSFER' AND T2.ICD9_CODE  =  'COPD'
+SELECT count(*) FROM Demographic WHERE DOB_YEAR  <  2120
+SELECT count(*) FROM Demographic WHERE ADMISSION_TYPE  =  'office' AND DOB_YEAR  <  2121
+SELECT count(*) FROM Demographic WHERE ADMISSION_LOCATION  =  'TRANSFER FROM HOSPITAL WITHIN FACILITY' AND DOB_YEAR  <  2089
+SELECT count(*) FROM Demographic WHERE DOB_YEAR  <  2092
+SELECT count(*) FROM Demographic WHERE ADMISSION_TYPE  =  'clinic referred' AND ADMITTIME  <  2121
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_LOCATION  =  'under phys referral/normal deli' AND T1.ADMISSION_TYPE  =  'Normal Delivery' AND T2.ICD9_CODE  =  'e9530'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_LOCATION  =  'clinic referral/premature' AND T2.ICD9_CODE  =  431
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_LOCATION  =  'clinic referral/premature' AND T2.ICD9_CODE  =  '25541'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'Phys Referral' OR T1.ADMISSION_TYPE  =  'Normal Delivery' AND T2.ICD9_CODE  =  '39.9'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Diagnoses AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ITEMID  =  'esophageal varices' AND T3.ICD9_CODE  =  'bleeding diagnoses'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_LOCATION  =  'EMERGENCY_ROOM' AND T2.ICD9_CODE  =  9229
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'clinic referral/premature' AND T2.ICD9_CODE  =  5781
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_LOCATION  =  'transfer from hosp/extram' AND T2.ICD9_CODE  =  40
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'phys referral/normal deli' AND T2.ICD9_CODE  =  5091
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_LOCATION  =  'emergency room admit' AND T2.ICD9_CODE  =  'closed biopsy of tongue'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_LOCATION  =  'emergency room admit' AND T2.SHORT_TITLE  =  'exc/dest hrt lesion open'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'Emergency' AND T2.LONG_TITLE  =  'Open liver biopsy'
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'office' AND T2.DRUG  =  'bupropion (sustained release)'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.ADMISSION_LOCATION  =  'transfer' AND T2.DRUG  =  'levothyroxine sodium'
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.DRUG  =  'gentamicin'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'clinic referral' OR T1.ADMISSION_TYPE  =  'premature admission' AND T2.DRUG_CODE  =  'myco500t'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_LOCATION  =  'Phys Referral/Normal Delivery' AND T2.ICD9_CODE  =  'cefe 1i'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_LOCATION  =  'emergency room admit' AND T2.DRUG_CODE  =  'esmobase'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'office' AND T2.ITEMID  =  50818
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ITEMID  =  51419
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'clinic referral/premature' AND T2.ITEMID  =  50976
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'emergency room' AND T2.ITEMID  =  'mesothelial cells'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'office' AND T2.ITEMID  =  'monocyte count'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ITEMID  =  'SED'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.ADMISSION_LOCATION  =  'hosp/extram' AND T2.FLUID  =  'joint fluid'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DISCHARGE_LOCATION  =  'snf' AND T2.ICD9_CODE  =  'hyperglycemia'
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'home' AND T2.ICD9_CODE  =  'morbid obesity/sda'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'home discharge' AND T2.ICD9_CODE  =  '487.1'
+SELECT count(*) FROM Demographic WHERE AGE  <  41 AND DISCHARGE_LOCATION  =  'home health care'
+SELECT count(*) FROM Demographic WHERE DAYS_STAY  >  17 AND DISCHARGE_LOCATION  =  'snf'
+SELECT count(*) FROM Demographic WHERE DISCHARGE_LOCATION  =  'home' AND DAYS_STAY  >  26
+SELECT count(*) FROM Demographic WHERE DAYS_STAY  >  1 AND DISCHARGE_LOCATION  =  'skilled nursing facility'
+SELECT count(*) FROM Demographic WHERE DOB_YEAR  <  2150
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DISCHARGE_LOCATION  =  'short term hospital' AND T2.ICD9_CODE  =  '7906'
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'home' AND T2.ICD9_CODE  =  5770
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 WHERE T1.EXPIRE_FLAG  =  'dead/expired' AND T1.SUBJECT_ID IN (SELECT DISTINCT T2.SUBJECT_ID FROM Diagnoses AS T2 WHERE T2.ICD9_CODE  =  28522)
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'LONG TERM CARE HOSPITAL' AND T2.ICD9_CODE  =  'neuropathy' OR T2.ICD9_CODE  =  'diabetes'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DISCHARGE_LOCATION  =  'psychiatric facility-partial hospitalization' AND T2.ICD9_CODE  =  'dehydration'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  14 AND T1.ADMISSION_TYPE  =  'home'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'home health care' AND T2.ICD9_CODE  =  8163
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'self' AND T1.EXPIRE_FLAG  =  'against medical advice' AND T2.ICD9_CODE  =  9960
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DISCHARGE_LOCATION  =  'long term care hospital' AND T2.LONG_TITLE  =  'form cutan ileoureterost'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'home health care' AND T2.LONG_TITLE  =  'opn mitral valvuloplasty'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DISCHARGE_LOCATION  =  'short term hospital' AND T2.LONG_TITLE  =  'percu endosc jejunostomy'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ITEMID  =  100000
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DISCHARGE_LOCATION  =  'Short term hospital' AND T2.LONG_TITLE  =  'Endosc retro cholangiopa'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DISCHARGE_LOCATION  =  'home' AND T2.LONG_TITLE  =  'endoscopic sphincterotomy' OR T2.LONG_TITLE  =  'papillotomy'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'Home Health Care' AND T2.LONG_TITLE  =  'insertion of non-drug-eluting coronary artery stent(s)'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  47 AND T2.ICD9_CODE  =  'acidosis'
+SELECT count(*) FROM Demographic WHERE AGE  <  43 AND infected right thigh graft primary disease
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  81 AND T2.ICD9_CODE  =  'liver transplant'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  47 AND T2.ICD9_CODE  =  'angioedema'
+SELECT count(*) FROM Demographic WHERE AGE  <  70 AND DIAGNOSIS  =  'st-segment elevation myocardial infarction' OR DIAGNOSIS  =  'cardiac cath'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  85 AND T2.ICD9_CODE  =  'femoral artery thrombosis'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  54 AND T2.SHORT_TITLE  =  'Chest pain'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  71 AND T2.ICD9_CODE  =  'right upper quadrant pain'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  59 AND T2.ICD9_CODE  =  'guillain barre syndrome'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  51 AND T2.ICD9_CODE  =  "complete heart block"
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  3 AND T2.ICD9_CODE  =  'abdominal pain'
+SELECT count(*) FROM Demographic WHERE DOB_YEAR  <  2076 AND Demographic.SUBJECT_ID IN (SELECT SUBJECT_ID FROM Diagnoses WHERE ICD9_CODE  =  'angioedema')
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOB_YEAR  <  2170 AND T2.ICD9_CODE  =  'squamous cell carcinoma oral tongue/sda'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOB  <  1837 AND T2.ICD9_CODE  =  'COPD'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOB_YEAR  <  2134 AND T2.ICD9_CODE  =  'transient ischemic attack'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD_YEAR  <=  2164 AND T2.ICD9_CODE  =  'ruq pain'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD_YEAR  <=  2126 AND T2.ICD9_CODE  =  'bowel obstruction'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD_YEAR  <=  2173 AND T2.ICD9_CODE  =  'sternal wound infection'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD_YEAR  <=  2138 AND T2.ICD9_CODE  =  '15.8'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD  <=  2164 AND T2.ICD9_CODE  =  'guillain barre syndrome'
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2135 AND T2.ICD9_CODE  =  '410.91' OR T2.ICD9_CODE  =  '410.92'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2131 AND T2.ICD9_CODE  =  'ruq pain' GROUP BY T1.SUBJECT_ID
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  5361
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Procedures AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  4576 AND T3.ICD9_CODE  =  4576
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Procedures AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.SHORT_TITLE  =  'rash' AND T3.ICD9_CODE  =  '5091'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  3512 AND T1.DIAGNOSIS  =  "Complete heart block primary disease"
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Procedures AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  'pneumonia' AND T2.ICD9_CODE  =  'human' AND T2.ICD9_CODE  =  'immunodeficiency' AND T2.ICD9_CODE  =  'virus' AND T2.ICD9_CODE  !=  'tuberculosis' AND T3.SHORT_TITLE  =  'aortocor' AND T3.SHORT_TITLE  =  'bypas-2' AND T3.SHORT_TITLE  =  'cor' AND T3.SHORT_TITLE  =  'art'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Procedures AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  'pneumonia' AND T3.SHORT_TITLE  =  'circumcision'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Procedures AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  'syncope' AND T3.ICD9_CODE  =  'partial glossectomy procedure'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Diagnoses AS T1 JOIN Procedures AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.ICD9_CODE  =  'copd' AND T1.ICD9_CODE  =  'exacerbation' AND T2.ICD9_CODE  =  'exc' AND T2.ICD9_CODE  =  'chest' AND T2.ICD9_CODE  =  'cage' AND T2.ICD9_CODE  =  'bone' AND T2.ICD9_CODE  =  'les'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Diagnoses AS T1 JOIN Procedures AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.ICD9_CODE  =  'coronary artery disease' OR T1.ICD9_CODE  =  'coronary artery bypass graft with mvr' AND T2.ICD9_CODE  =  'ven cath renal dialysis'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Procedures AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  'hyperglycemia' AND T3.ICD9_CODE  =  'insert 2 vascular stents procedure'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Prescriptions AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DRUG_TYPE  =  'pr' AND T1.ROUTE  =  'pr' AND T2.ICD9_CODE  =  'overdose'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Prescriptions AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  'pneumonia' AND T3.ROUTE  =  'iv drip'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID JOIN Diagnoses AS T3 ON T1.SUBJECT_ID  =  T3.SUBJECT_ID WHERE T2.DRUG_TYPE  =  'dialys' AND T3.ICD9_CODE  =  'sigmoid diverticulitis colovestical fistula/sda'
+SELECT count(DISTINCT T2.HADM_ID) FROM prescriptions AS T1 JOIN diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.route  =  'TD' AND T2.short_title  =  'Gangrene'
+SELECT count(DISTINCT T2.flag) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.FLAG  =  'abnormal' AND T1.DIAGNOSIS  =  'Brain mass intracranial hemorrhage'
+SELECT count(DISTINCT T2.hadm_id) FROM lab AS T1 JOIN diagnoses AS T2 ON T1.hadm_id  =  T2.hadm_id WHERE T2.icd9_code  =  'primary disease left femur fracture' AND T1.flag  =  'abnormal'
+SELECT count(DISTINCT T2.itemid) FROM demographic AS T1 JOIN lab AS T2 ON T1.hadm_id  =  T2.hadm_id WHERE T2.itemid  =  'joint fluid lab test' AND T1.diagnosis  =  'newborn primary disease'
+SELECT count(DISTINCT T1.HADM_ID) FROM Diagnoses AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ICD9_CODE  =  'brain mass' OR T1.ICD9_CODE  =  'intracranial hemorrhage' AND T2.FLUID  =  'urine'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Lab AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  'Morbid Obesity/Sda' AND T3.FLUID  =  'Ascites'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Lab AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  'morbid obesity/sda' AND T3.ITEMID  =  'urine'
+SELECT count(*) FROM Demographic WHERE AGE  <  50 AND DAYS_STAY  >  15
+SELECT count(*) FROM Demographic WHERE AGE  <  89 AND DISCHTIME  >  ADMITTIME
+SELECT count(*) FROM Demographic WHERE ADMITTIME  <  2179 AND AGE  <  76
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  20 AND T2.ICD9_CODE  =  42731
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  41 AND T2.ICD9_CODE  =  34291
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  76 AND T2.ICD9_CODE  =  99591
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  81 AND T2.ICD9_CODE  =  'hemochromatos-rbc trans'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  72 AND T2.ICD9_CODE  =  'stevens-johnson-ten syn'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  31 AND T2.ICD9_CODE  =  'crnry athrscl natve vssl'
+SELECT count(*) FROM Demographic WHERE AGE  <  27 AND 'malig neo ascend colon' IN (SELECT LONG_TITLE FROM Diagnoses WHERE HADM_ID  =  Demographic.HADM_ID)
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  59 AND T2.ICD9_CODE  =  'other and unspecified open wound of head'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  27 AND T2.ICD9_CODE  =  'hypoxemia'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Diagnoses AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T1.AGE  <  71 AND (T2.ICD9_CODE  =  T3.ICD9_CODE OR T2.ICD9_CODE  =  T3.ICD9_CODE OR T2.ICD9_CODE  =  T3.ICD9_CODE)
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  74 AND T2.ICD9_CODE  =  'V72.0' OR T2.ICD9_CODE  =  'V72.1'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  36 AND T2.ICD9_CODE  =  'hypotension of hemodialysis'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  76 AND T2.ICD9_CODE  =  3961
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  55 AND T2.ICD9_CODE  =  540
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  86 AND T2.ICD9_CODE  =  '453'
+SELECT count(*) FROM Demographic WHERE AGE  <  56 AND 'endovasc embol hd/nk ves' IN (SELECT LONG_TITLE FROM Procedures WHERE Demographic.SUBJECT_ID  =  Procedures.SUBJECT_ID)
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  31 AND T2.ITEMID  =  'Enteral infusion of concentrated nutritional substances'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  80 AND T2.DRUG  =  "cefpodoxime proxetil"
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  43 AND T2.LABEL  =  'transplant self medication program'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  58 AND T2.DRUG  =  "nitroglycerin sl"
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  48 AND T2.DRUG  =  'phenylephrine'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  76 AND T2.DRUG  =  "heparin flush picc (100 units/ml)"
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Prescriptions AS T1 JOIN Demographic AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.DRUG  =  'aztr1000fb' AND T2.AGE  <  80
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  64 AND T2.DRUG_TYPE  =  "warf1"
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  55 AND T2.DRUG_CODE  =  'syrg1'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  67 AND T2.DRUG_CODE  =  'ns451000'
+SELECT count(*) FROM Demographic WHERE AGE  <  31 AND 'ns100' IN (SELECT DISTINCT LONG_TITLE FROM Diagnoses WHERE HADM_ID  =  Demographic.HADM_ID)
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  79 AND T2.DRUG_TYPE  =  'labe100i'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  81 AND T2.DRUG_CODE  =  'prismab32k25000'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Prescriptions AS T1 JOIN Demographic AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T2.AGE  <  45 AND T1.DRUG  =  'glyc1r'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Prescriptions AS T1 JOIN Demographic AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T2.AGE  <  80 AND T1.ROUTE  =  'ng'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  71 AND T2.ITEMID  =  50818
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  83 AND T2.ITEMID  =  'co2'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  79 AND T2.ITEMID  =  'Joint Fluid'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  45 AND T2.ITEMID  =  'Joint Fluid'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  47 AND T2.FLUID  =  'Cerebrospinal fluid'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.AGE  <  47 AND T2.FLUID  =  "joint fluid"
+SELECT count(Lab.SUBJECT_ID) FROM Lab AS T1 JOIN Demographic AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T2.AGE  <  61 AND T1.ITEMID  =  'Blood gas'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  34 AND T2.ICD9_CODE  =  261
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  6 AND T2.ICD9_CODE  =  'V52.9'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  7 AND T2.ICD9_CODE  =  5732
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  13 AND T2.ICD9_CODE  =  4105
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  29 AND T2.ICD9_CODE  =  5091
+SELECT count(DISTINCT T2.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.DRUG_TYPE  =  'main' AND T1.DAYS_STAY  >  2
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Prescriptions AS T1 JOIN Demographic AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.DRUG  =  'sulfameth/trimethoprim' AND T2.DAYS_STAY  >  17
+SELECT count(DISTINCT T2.SUBJECT_ID) FROM demographic AS T1 JOIN prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  29 AND T2.DRUG  =  'miconazole powder 2%'
+SELECT count(DISTINCT T1.subject_id) FROM demographic AS T1 JOIN prescriptions AS T2 ON T1.subject_id  =  T2.subject_id WHERE T1.days_stay  >  11 AND T2.drug  =  'chlorothiazide'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  9 AND T2.ITEMID  =  'Promyelocytes'
+SELECT count(DISTINCT T2.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  6
+SELECT count(DISTINCT T2.ITEMID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  15
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  2 AND T2.LABEL  =  'Calcium'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  27 AND T2.ITEMID  =  'Magnesium'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  5 AND T2.ITEMID  =  'iron'
+SELECT count(DISTINCT T2.itemid) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.hadm_id  =  T2.hadm_id WHERE T2.ITEMID  =  'Ascites' AND T1.DAYS_STAY  >  2
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  2 AND T2.FLUID  =  'blood'
+SELECT count(DISTINCT T2.itemid) FROM demographic AS T1 JOIN lab AS T2 ON T1.hadm_id  =  T2.hadm_id WHERE T2.ITEMID  =  4 AND T1.DAYS_STAY  >  4
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  >  6 AND T2.CATEGORY  =  'chemistry'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOB_YEAR  <  2156 AND T2.ICD9_CODE  =  "chrnc hpt c wo hpat coma"
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOB_YEAR  <  2197 AND T2.ICD9_CODE  =  'neutropenia nos'
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOB_YEAR  <  2095 AND T2.ICD9_CODE  =  '775.5'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOB_YEAR  <  2101 AND T2.LONG_TITLE  =  'other unilateral salpingo-oophorectomy'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOB_YEAR  <  2152 AND T2.LONG_TITLE  =  "left heart cardiac cath"
+SELECT COUNT(DISTINCT Demographic.SUBJECT_ID) FROM Demographic WHERE Demographic.DOB_YEAR < 2167 AND Demographic.SUBJECT_ID IN ( SELECT DISTINCT Demographic.SUBJECT_ID FROM Demographic JOIN Procedures ON Demographic.HADM_ID = Procedures.HADM_ID WHERE Procedures.ICD9_CODE LIKE '%34.4%' );
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.DOB_YEAR  <  2052 AND T2.ITEMID  =  100000000
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Prescriptions AS T1 JOIN Demographic AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T2.DOB_YEAR  <  2056
+SELECT count(drug_type) FROM prescriptions WHERE dob_year  <  2056
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 WHERE T1.DOB  <  2058 AND T1.SUBJECT_ID IN (SELECT DISTINCT T2.SUBJECT_ID FROM Prescriptions AS T2 WHERE T2.DRUG_TYPE  =  'base')
+SELECT count(drug) FROM prescriptions WHERE drug  =  'multivitamins' AND DOB_YEAR  <  2043
+SELECT count(DISTINCT T2.hadm_id) FROM prescriptions AS T1 JOIN demographic AS T2 ON T1.hadm_id  =  T2.hadm_id WHERE T1.DRUG  =  'metaformin' AND T2.DOB_YEAR  <  2089
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOB  <  2098 AND T2.DRUG  =  'csa50i'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOB_YEAR  <  1821 AND T2.DRUG_CODE  =  'thiam100i'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOB_YEAR  <  2056 AND T2.ROUTE  =  'si'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.DOB_YEAR  <  2168 AND T2.ROUTE  =  "buccal"
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOB_YEAR  <  2104 AND T2.ROUTE  =  "td"
+SELECT count(Lab.SUBJECT_ID) FROM Lab AS T1 JOIN Demographic AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.ITEMID  =  51067 AND T2.DOB_YEAR  <  2146
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM lab AS T1 JOIN demographic AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.FLAG  =  1 AND T2.DOB_YEAR  <  2097
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOB_YEAR  <  2073 AND T2.FLAG  =  'abnormal'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOB_YEAR  <  1882 AND T2.FLAG  =  'abnormal'
+SELECT count(DISTINCT T2.LABEL) FROM Demographic AS T1 JOIN lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.LABEL  =  'immunoglobulin a' AND T1.DOB_YEAR  <  2123
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM lab AS T1 JOIN demographic AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.ITEMID  =  'albumin' AND T2.DOB_YEAR  <  2129
+SELECT count(DISTINCT T1.subject_id) FROM lab AS T1 JOIN demographic AS T2 ON T1.subject_id  =  T2.subject_id WHERE T1.itemid  =  'aspartate aminotransferase (ast)' AND T2.dob_year  <  2110
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM lab AS T1 JOIN demographic AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ITEMID  =  'Urea Nitrogen' AND T2.DOB_YEAR  <  2058
+SELECT count(DISTINCT T1.subject_id) FROM lab AS T1 JOIN demographic AS T2 ON T1.subject_id  =  T2.subject_id WHERE T1.itemid  =  'alt' AND T2.dob_year  <  2052
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Lab AS T1 JOIN Demographic AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T2.DOB_YEAR  <  2089
+SELECT count(DISTINCT T2.SUBJECT_ID) FROM Demographic AS T1 JOIN lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.FLUID  =  'Other' AND T1.DOB_YEAR  <  2121
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD  <=  2154 AND T2.ICD9_CODE  =  78830
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 WHERE T1.DOD  <=  2138 AND T1.SUBJECT_ID IN (SELECT DISTINCT T2.SUBJECT_ID FROM Diagnoses AS T2 WHERE T2.ICD9_CODE  =  53190)
+SELECT count(DISTINCT T1.HADM_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD  <  2186 AND T2.ICD9_CODE  =  7778
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD_YEAR  <=  2138 AND T2.ICD9_CODE  =  '40391'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 WHERE T1.DOD  <=  2186 AND T1.ADMITTIME  <=  2186 AND T1.SUBJECT_ID IN (SELECT DISTINCT T2.SUBJECT_ID FROM Demographic AS T2 WHERE T2.SUBJECT_ID IN (SELECT DISTINCT T3.SUBJECT_ID FROM Diagnoses AS T3 WHERE T3.ICD9_CODE  =  'hyperacusis'))
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD  <=  2158 AND T2.ICD9_CODE  =  3607
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 WHERE T1.DOD_YEAR  <  2174 AND T1.SUBJECT_ID IN (SELECT DISTINCT T2.SUBJECT_ID FROM Demographic AS T2 WHERE T2.SUBJECT_ID IN (SELECT DISTINCT T3.SUBJECT_ID FROM Diagnoses AS T3 WHERE T3.ICD9_CODE  =  3532))
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 WHERE T1.DOD  <=  2115 AND T1.SUBJECT_ID IN (SELECT DISTINCT T2.SUBJECT_ID FROM Demographic AS T2 JOIN Diagnoses AS T3 ON T2.HADM_ID  =  T3.HADM_ID WHERE T3.ICD9_CODE  =  598)
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD  <=  2138 AND T2.LONG_TITLE  =  'Aorto'coronary bypass of one coronary artery
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD  <=  2112 AND T2.ICD9_CODE  =  'coronar arteriorgr-2 cath'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD  <=  2186 AND T2.ICD9_CODE  =  'chordae tendineae operation'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  '463.5' AND T1.DOD  <=  2126
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD_YEAR  <=  2183 AND T1.DOD  IS NOT NULL AND T2.ICD9_CODE  =  'annuloplasty'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Prescriptions AS T1 JOIN Demographic AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T2.DOD_YEAR  <=  2164
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD_YEAR  <=  2115 AND T2.DRUG  =  'docusate sodium (liquid)'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD_YEAR  <=  2158 AND T2.DRUG  =  "hydralazine hcl"
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD  <=  2179 AND T2.DRUG_CODE  =  'meth10sy'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD_YEAR  <=  2155 AND T1.DOD  IS NOT NULL AND T2.DRUG  =  'osel75'
+SELECT count(DISTINCT T2.HADM_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD_YEAR  <=  2186 AND T2.DRUG  =  'hydx25'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM demographic AS T1 JOIN prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD_YEAR  <=  2115 AND T2.DRUG_TYPE  =  'glyb5'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Lab AS T1 JOIN Demographic AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ITEMID  =  50967 AND T2.DOD_YEAR  <=  2165
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD  <=  '2138-01-01' AND T2.ITEMID  =  51355
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD  <=  2158 AND T2.ITEMID  =  51078
+SELECT count(DISTINCT T1.DOD) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD  <=  2115 AND T2.LABEL  =  'hyaline casts'
+SELECT count(DISTINCT T1.HADM_ID) FROM Lab AS T1 JOIN Demographic AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.DOD  <=  2174
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Diagnoses AS T1 JOIN Demographic AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ICD9_CODE  =  2449 AND T2.ADMITTIME  <  2154
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2110 AND T2.ICD9_CODE  =  7885
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2156 AND T2.ICD9_CODE  =  70721
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Diagnoses AS T1 JOIN Demographic AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ADMITTIME  <  2151 AND T1.ICD9_CODE  =  "v3001"
+SELECT count(DISTINCT T2.hadm_id) FROM diagnoses AS T1 JOIN demographic AS T2 ON T1.hadm_id  =  T2.hadm_id WHERE T1.icd9_code  =  '412.9' AND T2.admittime  <  2127
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Lab AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T1.ADMITTIME  <  2138 AND T2.ICD9_CODE  =  '284.5' AND T3.VALUE_UNIT  =  'mg/dL'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2129 AND T2.ICD9_CODE  =  '291.0'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2174 AND T2.ICD9_CODE  =  'ventricular septal defect'
+SELECT count(HADM_ID) FROM Procedures AS T1 JOIN Demographic AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ADMITTIME  <  2137 AND T1.ICD9_CODE  =  3322
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2151 AND T2.ICD9_CODE  =  8841
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2115 AND T2.LONG_TITLE  =  'insertion of non-drug-eluting coronary artery stent(s)'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2184 AND T2.ICD9_CODE  =  '6521'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.DRUG_TYPE  =  'IV' AND T1.ADMITTIME  <  2170
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Prescriptions AS T1 JOIN Demographic AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DRUG_TYPE  =  'IV Bolus' AND T2.ADMITTIME  <  2124
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ROUTE  =  'buccal' AND T1.ADMITTIME  <  2173
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM lab AS T1 JOIN demographic AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.ITEMID  =  50970 AND T2.ADMITTIME  <  2125
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Lab AS T1 JOIN Demographic AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.ITEMID  =  50990 AND T2.ADMITTIME  <  2165
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM lab AS T1 JOIN demographic AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.ITEMID  =  50927 AND T2.ADMITTIME  <  2180
+SELECT count(DISTINCT T2.itemid) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.hadm_id  =  T2.hadm_id WHERE T2.ITEMID  =  50817 AND T2.CHARTTIME  <  2138
+SELECT count(DISTINCT T2.flag) FROM Demographic AS T1 JOIN lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.FLAG  =  'abnormal' AND T1.ADMITYEAR  <  2178
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM lab AS T1 JOIN Demographic AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.ITEMID  =  'immunoglobulin A' AND T2.ADMITTIME  <  2146
+SELECT DISTINCT T1.NAME FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2184 AND T2.ITEMID  =  'Joint Fluid'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2110 AND T2.ITEMID  =  'Joint Fluid'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM lab AS T1 JOIN demographic AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.ITEMID  =  2111 AND T2.ADMITTIME  <  2111
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  <  2151 AND T2.FLUID  =  'urine'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM lab AS T1 JOIN demographic AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.ITEMID  =  'Clinical Chemistry' AND T2.ADMITTIME  <  2151
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Prescriptions AS T1 JOIN Diagnoses AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.DRUG_TYPE  =  'main' AND T2.ICD9_CODE  =  'v4962'
+SELECT count(DISTINCT T1.HADM_ID) FROM Diagnoses AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ICD9_CODE  =  'v433' AND T2.DRUG_TYPE  =  'main'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Diagnoses AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.DRUG_TYPE  =  'base' AND T3.ICD9_CODE  =  '28860'
+SELECT count(*) FROM Demographic WHERE ETHNICITY  =  'asian' AND AGE  <  50
+SELECT DISTINCT T1.SUBJECT_ID FROM Prescriptions AS T1 JOIN Diagnoses AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.DRUG_TYPE  =  'main' AND T2.ICD9_CODE  =  5180
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Diagnoses AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.DRUG_TYPE  =  'additive' AND T3.ICD9_CODE  =  '78791'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Prescriptions AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  59080 AND T3.ROUTE  =  'neb'
+SELECT count(DISTINCT T2.itemid) FROM Diagnoses AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ITEMID  =  1173 AND T2.FLAG  =  'ih'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Prescriptions AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  78559 AND T3.ROUTE  =  'ivpca'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Diagnoses AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ROUTE  =  'ed' AND T3.ICD9_CODE  =  '56212'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM prescriptions AS T1 JOIN diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DRUG_TYPE  =  'nu' AND T2.ICD9_CODE  =  'e9429'
+SELECT count(drug_route) FROM prescriptions AS T1 JOIN diagnoses AS T2 ON T1.hadm_id  =  T2.hadm_id WHERE drug_route  =  'ivpca' AND icd9_code  =  '25061'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Lab AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  48249 AND T3.FLAG  =  'abnormal'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Diagnoses AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.FLAG  =  'abnormal' AND T3.ICD9_CODE  =  36202
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Diagnoses AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ITEMID  =  'Blood fluid' AND T3.ICD9_CODE  =  29281
+SELECT count(DISTINCT T2.HADM_ID) FROM diagnoses AS T2 JOIN lab AS T1 ON T2.HADM_ID  =  T1.HADM_ID WHERE T2.ICD9_CODE  =  3310 AND T1.ITEMID  =  3310
+SELECT count(DISTINCT T1.ITEMID) FROM Lab AS T1 JOIN Demographic AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Diagnoses AS T3 ON T2.HADM_ID  =  T3.HADM_ID WHERE T1.ITEMID  =  1173
+SELECT count(DISTINCT T1.HADM_ID) FROM Lab AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.FLUID  =  'other body fluid' AND T2.ICD9_CODE  =  '42831'
+SELECT count(hadm_id) FROM lab WHERE fluid  =  'cerebrospinal fluid (csf)' AND hadm_id IN (SELECT hadm_id FROM diagnoses WHERE icd9_code  =  'v667')
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Diagnoses AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ITEMID  =  74602 AND T3.ICD9_CODE  =  74602
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Lab AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  42613 AND T3.CATEGORY  =  "hamatology"
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Lab AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  53081 AND T3.CATEGORY  =  'hematology'
+SELECT count(DISTINCT T1.subject_id) FROM lab AS T1 JOIN diagnoses AS T2 ON T1.subject_id  =  T2.subject_id AND T1.hadm_id  =  T2.hadm_id WHERE T1.itemid  =  'chemistry lab test' AND T2.icd9_code  =  6824
+SELECT count(DISTINCT T1.subject_id) FROM lab AS T1 JOIN diagnoses AS T2 ON T1.subject_id  =  T2.subject_id WHERE T1.itemid  =  'chemistry lab test' AND T2.icd9_code  =  431
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Prescriptions AS T1 JOIN Diagnoses AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.DRUG_TYPE  =  'main' AND T2.ICD9_CODE  =  'intestinal perforation'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Prescriptions AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.SHORT_TITLE  =  'dmi neuro nt st uncntrld' AND T3.DRUG_TYPE  =  'main'
+SELECT count(DISTINCT T2.value_unit) FROM lab AS T1 JOIN diagnoses AS T2 ON T1.hadm_id  =  T2.hadm_id WHERE T2.icd9_code  =  'skin disorders nec' AND T1.value_unit  =  'additive therapy'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Prescriptions AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DRUG_TYPE  =  'main' AND T2.ICD9_CODE  =  'unspecified neutropenia'
+SELECT count(DISTINCT T1.DRUG_TYPE) FROM Prescriptions AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DRUG_TYPE  =  'base' AND T2.ICD9_CODE  =  '296.0' AND T2.ICD9_CODE  !=  '296.0'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Diagnoses AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ICD9_CODE  =  'acute pancreatitis' AND T2.DRUG_TYPE  =  'main type'
+SELECT count(DISTINCT T1.subject_id) FROM prescriptions AS T1 JOIN diagnoses AS T2 ON T1.subject_id  =  T2.subject_id WHERE T1.drug_type  =  'main' AND T2.icd9_code  =  '1530'
+SELECT count(DISTINCT T1.ICD9_CODE) FROM Diagnoses AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ICD9_CODE  =  'acidosis' AND T2.ROUTE  =  'ou'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Prescriptions AS T1 JOIN Diagnoses AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.DRUG_TYPE  =  'IV Bolus' AND T2.ICD9_CODE  =  'aspirin'
+SELECT count(route) FROM prescriptions AS T1 JOIN diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.route  =  'left eye' AND T2.ICD9_CODE  =  'regional enteritis nos'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Diagnoses AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ROUTE  =  'iv bolus' AND T3.SHORT_TITLE  =  'dvrtclo colon w hmrhg'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID JOIN Diagnoses AS T3 ON T1.SUBJECT_ID  =  T3.SUBJECT_ID WHERE T2.ROUTE  =  'ih' AND T3.ICD9_CODE  =  'pneumonia' AND T3.ICD9_CODE  =  'unspecified organism'
+SELECT count(DISTINCT T2.hadm_id) FROM diagnoses AS T1 JOIN prescriptions AS T2 ON T1.hadm_id  =  T2.hadm_id WHERE T1.icd9_code  =  'mv collision nos-driver' AND T2.drug_type  =  'id therapy'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Prescriptions AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  'colonic malignancy' AND T3.ROUTE  =  'iv'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Diagnoses AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.FLAG  =  'delta' AND T3.ICD9_CODE  =  'buttock pressure ulcer'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Diagnoses AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.FLAG  =  'abnormal' AND T3.SHORT_TITLE  =  'ocl crtd art wo infrct'
+SELECT count(DISTINCT T2.HADM_ID) FROM diagnoses AS T2 JOIN lab AS T1 ON T2.HADM_ID  =  T1.HADM_ID WHERE T2.ICD9_CODE  =  'benign neoplasm of pituitary gland'
+SELECT COUNT(DISTINCT Lab.HADM_ID) FROM Lab JOIN Diagnoses ON Lab.HADM_ID = Diagnoses.HADM_ID WHERE Lab.ITEMID = "Joint fluid" AND (Diagnoses.ICD9_CODE = "401.0" OR Diagnoses.ICD9_CODE = "401.1" OR Diagnoses.ICD9_CODE = "401.2" OR Diagnoses.ICD9_CODE = "401.3" OR Diagnoses.ICD9_CODE = "401.4" OR Diagnoses.ICD9_CODE = "401.5" OR Diagnoses.ICD9_CODE = "401.6" OR Diagnoses.ICD9_CODE = "401.7" OR Diagnoses.ICD9_CODE = "401.8" OR Diagnoses.ICD9_CODE = "401.9" OR Diagnoses.ICD9_CODE = "402.0" OR Diagnoses.ICD9_CODE = "402.1" OR Diagnoses.ICD9_CODE = "402.2" OR Diagnoses.ICD9_CODE = "402.3" OR Diagnoses.ICD9_CODE = "402.4" OR Diagnoses.ICD9_
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Lab AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  'noninf gastroenterit nec' AND T3.FLUID  =  'pleural'
+SELECT count(DISTINCT T1.subject_id) FROM lab AS T1 JOIN diagnoses AS T2 ON T1.subject_id  =  T2.subject_id WHERE T1.FLUID  =  'pleural' AND T2.ICD9_CODE  =  'adv eff benzodiaz tranq'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Lab AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  'other convulsions' AND T3.ITEMID  =  'csf'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Lab AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  'do not resusctate status' AND T3.CATEGORY  =  'hematology'
+SELECT count(DISTINCT T1.subject_id) FROM lab AS T1 JOIN diagnoses AS T2 ON T1.subject_id  =  T2.subject_id WHERE T1.CATEGORY  =  'hematology' AND T2.ICD9_CODE  =  'disruption of external operation (surgical) wound'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Prescriptions AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  'tietze''s disease' AND T3.DRUG_TYPE  =  'base'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Diagnoses AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ICD9_CODE  =  'secondary neuroendocrine tumor of bone' AND T2.DRUG_TYPE  =  'base drug'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Prescriptions AS T1 JOIN Diagnoses AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.DRUG_TYPE  =  'additive' AND T2.ICD9_CODE  =  'insomnia, unspecified'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Prescriptions AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  'acute kidney failure with lesion of tubular necrosis' AND T3.DRUG_TYPE  =  'base'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID JOIN Diagnoses AS T3 ON T1.SUBJECT_ID  =  T3.SUBJECT_ID WHERE T2.ROUTE  =  'oral' AND T3.ICD9_CODE  =  'diabetes mellitus' AND T3.ICD9_CODE  !=  'complication' AND T3.ICD9_CODE  !=  'type ii' AND T3.ICD9_CODE  !=  'unspecified type' AND T3.ICD9_CODE  !=  'uncontrolled diagnoses'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Prescriptions AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.LONG_TITLE  =  'atherosclerosis of native arteries of the extremities with intermittent claudication' AND T3.ROUTE  =  'replace'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Lab AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  'unspecified opioid type dependence' AND T3.ROUTE  =  'ivpca'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Diagnoses AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ROUTE  =  'sl' AND T3.ICD9_CODE  =  'benign neoplasm of spinal meninges'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Lab AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  'unspecified' AND T2.ICD9_CODE  =  'migraine' AND T2.ICD9_CODE  !=  'intractable' AND T2.ICD9_CODE  !=  'migrainous' AND T3.FLAG  =  'abnormal'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Diagnoses AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ICD9_CODE  =  'Rheumatic heart failure (congestive)' AND T2.FLAG  =  'Delta abnormal'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Lab AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  'encephalopathy unspecified' AND T3.FLAG  =  'abnormal'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Lab AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.LONG_TITLE  =  'embolism and thrombosis of iliac artery' AND T3.FLAG  =  'delta'
+SELECT count(DISTINCT T2.subject_id) FROM lab AS T1 JOIN diagnoses AS T2 ON T1.subject_id  =  T2.subject_id WHERE T1.VALUE_UNIT  =  'delta' AND T2.subject_id  IN  (SELECT DISTINCT T3.subject_id FROM diagnoses AS T3 WHERE T3.icd9_code  =  'venous thrombosis' OR T3.icd9_code  =  'embolism')
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Lab AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.LONG_TITLE  =  'personal history of malignant neoplasm of bladder' AND T3.FLAG  =  'abnormal'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Lab AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ICD9_CODE  =  'healing traumatic fracture of lower leg' AND T3.FLUID  =  'pleural'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Procedures AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.DRUG_TYPE  =  'main' AND T3.ICD9_CODE  =  '8960'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Procedures AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.DRUG_TYPE  =  'main' AND T3.ICD9_CODE  =  '5771'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Procedures AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.DRUG_TYPE  =  'base' AND T3.ICD9_CODE  =  3799
+SELECT count(DISTINCT T2.id) FROM procedures AS T1 JOIN prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ICD9_CODE  =  3533 AND T2.ROUTE  =  'neb'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Procedures AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.ROUTE  =  'Replaced' AND T3.ICD9_CODE  =  8105
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Lab AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.LONG_TITLE  =  'closed biopsy of skin and subcutaneous tissue' AND T3.FLUID  =  'cerebrospinal fluid (csf)'
+SELECT count(DISTINCT T2.itemid) FROM lab AS T1 JOIN demographic AS T2 ON T1.subject_id  =  T2.subject_id JOIN procedures AS T3 ON T2.subject_id  =  T3.subject_id WHERE T1.itemid  =  'pleural fluid' AND T3.icd9_code  =  'creation of conduit between left ventricle and aorta'
+SELECT count(*) FROM Lab WHERE CATEGORY  =  'Hematology' AND VALUE_UNIT  =  'Intraoperative cardiac pacemaker'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Lab AS T1 JOIN Prescriptions AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.ITEMID  =  'urine' AND T2.DRUG_CODE  =  'teraz5'
+SELECT count(DISTINCT T1.subject_id) FROM lab AS T1 JOIN prescriptions AS T2 ON T1.subject_id  =  T2.subject_id WHERE T1.itemid  =  'pleural fluid' AND T2.drug_code  =  'ris1l'
+SELECT count(DISTINCT T1.subject_id) FROM lab AS T1 JOIN prescriptions AS T2 ON T1.subject_id  =  T2.subject_id WHERE T1.itemid  =  'csf' AND T2.drug  =  'meth10sy'
+SELECT count(DISTINCT T1.subject_id) FROM lab AS T1 JOIN prescriptions AS T2 ON T1.subject_id  =  T2.subject_id WHERE T1.drug_code  =  'warf2' AND T1.fluid  =  'other'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Prescriptions AS T1 JOIN Lab AS T2 ON T1.SUBJECT_ID  =  T2.SUBJECT_ID WHERE T1.DRUG_TYPE  =  'warf1' AND T2.FLUID  =  'pleural'
+SELECT count(DISTINCT T2.hadm_id) FROM lab AS T1 JOIN prescriptions AS T2 ON T1.hadm_id  =  T2.hadm_id WHERE T1.fluid  =  'cerebrospinal fluid (csf)' AND T2.drug_type  =  'lans30st'
+SELECT count(DISTINCT T2.hadm_id) FROM lab AS T1 JOIN prescriptions AS T2 ON T1.hadm_id  =  T2.hadm_id WHERE T1.itemid  =  'csf' AND T2.drug_type  =  'neolevo5'
+SELECT count(DISTINCT T1.subject_id) FROM lab AS T1 JOIN prescriptions AS T2 ON T1.subject_id  =  T2.subject_id WHERE T1.label  =  'csf' AND T2.drug  =  'lido2/5j'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Lab AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.DRUG_TYPE  =  'hepapremix' AND T3.FLUID  =  'ascites'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Prescriptions AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Lab AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T2.DRUG_TYPE  =  'dapt500i' AND T3.FLUID  =  'ascites'
+SELECT count(*) FROM Lab WHERE ITEMID  =  51213 AND FLAG  =  'abnormal'
+SELECT count(*) FROM Lab WHERE ITEMID  =  50803 AND FLAG  =  'abnormal'
+SELECT COUNT (DISTINCT SUBJECT_ID) FROM Lab WHERE ITEMID  =  50804 AND FLAG  =  'abnormal'
+SELECT count(DISTINCT T1.SUBJECT_ID) FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.FLAG  =  'abnormal' AND T2.LABEL  =  'triiodothyronine (t3)'
+SELECT count(DISTINCT Demographic.SUBJECT_ID) FROM Demographic JOIN Lab ON Demographic.HADM_ID = Lab.HADM_ID WHERE Lab.FLAG  =  'abnormal' AND Lab.ITEMID  =  'phenytoin'
+SELECT count(*) FROM Lab WHERE FLAG  =  'abnormal' AND ITEMID  =  'tropnin'
+SELECT count(*) FROM Lab WHERE LABEL  =  'potassium' OR LABEL  =  'urine' AND FLAG  =  'abnormal' 
+SELECT count(*) FROM Lab WHERE FLAG  =  'abnormal' AND LABEL  =  'gentamicin'
+SELECT count(*) FROM Lab WHERE FLAG  =  'delta' AND LABEL  =  'c-reactive protein'
+SELECT LANGUAGE FROM Demographic WHERE SUBJECT_ID  =  2560
+SELECT Demographic.ADMITTIME ,  Demographic.DISCHTIME FROM Demographic WHERE Demographic.SUBJECT_ID  =  2560
+SELECT ICD9_CODE FROM Diagnoses WHERE SUBJECT_ID  =  2560
+SELECT MARITAL_STATUS ,  RELIGION FROM Demographic WHERE SUBJECT_ID  =  2560
+SELECT AGE ,  INSURANCE FROM Demographic WHERE SUBJECT_ID  =  2560
+SELECT ADMISSION_TYPE ,  ADMISSION_LOCATION FROM Demographic WHERE SUBJECT_ID  =  2560
+SELECT ADMISSION_TYPE ,  DISCHARGE_LOCATION FROM Demographic WHERE SUBJECT_ID  =  2560
+SELECT ADMISSION_TYPE ,  ADMITTIME FROM Demographic WHERE SUBJECT_ID  =  2560
+SELECT ADMISSION_TYPE ,  ITEMID FROM Demographic WHERE SUBJECT_ID  =  2560 
+SELECT T1.ADMISSION_TYPE ,  T2.FLAG FROM Demographic AS T1 JOIN Lab AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.SUBJECT_ID  =  2560 AND T2.SUBJECT_ID  =  2560
+SELECT ADMISSION_LOCATION ,  DISCHARGE_LOCATION FROM Demographic WHERE SUBJECT_ID  =  2560
+SELECT ADMISSION_LOCATION ,  LONG_TITLE FROM Demographic AS T1 JOIN Procedures AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.SUBJECT_ID  =  2560 AND T2.SUBJECT_ID  =  2560
+SELECT ICD9_CODE ,  DISCHTIME FROM Diagnoses AS T1 JOIN Demographic AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.SUBJECT_ID  =  2560 GROUP BY ICD9_CODE
+SELECT T1.ICD9_CODE ,  T2.ITEMID FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID JOIN Lab AS T3 ON T1.HADM_ID  =  T3.HADM_ID WHERE T1.SUBJECT_ID  =  2560
+SELECT Demographic.ADMITTIME ,  Diagnoses.LONG_TITLE FROM Demographic JOIN Diagnoses ON Demographic.HADM_ID = Diagnoses.HADM_ID WHERE Demographic.SUBJECT_ID  =  2560
+SELECT Demographic.ADMITTIME ,  Procedures.ICD9_CODE FROM Demographic JOIN Procedures ON Demographic.HADM_ID = Procedures.HADM_ID WHERE Demographic.SUBJECT_ID  =  2560
+SELECT ETHNICITY FROM Demographic WHERE SUBJECT_ID  =  6983
+SELECT ADMITTIME FROM Demographic WHERE SUBJECT_ID = 6983
+SELECT DRUG FROM Prescriptions WHERE SUBJECT_ID = 6983
+SELECT NAME FROM Demographic WHERE SUBJECT_ID = 3343
+SELECT ICD9_CODE ,  SHORT_TITLE ,  LONG_TITLE FROM Diagnoses WHERE SUBJECT_ID  =  3343
+SELECT HADM_ID FROM Demographic WHERE SUBJECT_ID  =  'jerry deberry'
+SELECT MARITAL_STATUS ,  DAYS_STAY FROM Demographic WHERE NAME  =  'jerry deberry'
+SELECT AGE ,  RELIGION FROM Demographic WHERE NAME  =  'jerry deberry'
+SELECT ADMISSION_LOCATION ,  DOB FROM Demographic WHERE NAME  =  'Jerry Deberry'
+SELECT ADMITTIME FROM Demographic WHERE SUBJECT_ID  =  'Stephanie Suchan'
+SELECT RELIGION FROM Demographic WHERE NAME  =  'Paul Edwards'
+SELECT ADMITTIME ,  DISCHTIME FROM Demographic WHERE NAME  =  'Paul Edwards'
+SELECT ICD9_CODE FROM Procedures WHERE SUBJECT_ID  =  (SELECT SUBJECT_ID FROM Demographic WHERE NAME  =  'paul edwards')
+SELECT GENDER FROM Demographic WHERE NAME  =  'kelly Gallardo'
+SELECT LANGUAGE FROM Demographic WHERE NAME  =  'Kelly Gallardo'
+SELECT ADMITTIME FROM Demographic WHERE NAME  =  'Kelly Gallardo'
+SELECT avg(DAYS_STAY) FROM Demographic WHERE INSURANCE  =  'self pay'
+SELECT AVG(DAYS_STAY) FROM Demographic WHERE ETHNICITY  =  'american indian/alaska native'
+SELECT min(ADMITTIME - DISCHTIME) FROM Demographic WHERE ETHNICITY  =  'hispanic' OR ETHNICITY  =  'latino-puerto rican'
+SELECT max(DAYS_STAY) FROM Demographic WHERE DOD IS NOT NULL
+SELECT max(DAYS_STAY) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  'gastrointestinal bleed'
+SELECT avg(DAYS_STAY) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  'primary disease posterior communicating aneurysm/sda'
+SELECT max(DAYS_STAY) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  'squamous cell carcinoma oral tongue/sda'
+SELECT max(DAYS_STAY) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  'stemi'
+SELECT count(*) FROM Demographic WHERE AGE  >=  64 AND DAYS_STAY  =  (SELECT max(DAYS_STAY) FROM Demographic WHERE AGE  >=  64)
+SELECT max(ADMITTIME) FROM Demographic WHERE DOB_YEAR  >  2049
+SELECT max(DAYS_STAY) FROM Demographic WHERE DOB_YEAR  >  2053
+SELECT min(ADMITTIME - DISCHTIME) FROM Demographic WHERE DOB_YEAR  >  2058
+SELECT AVG (DAYS_STAY) FROM Demographic WHERE ADMITTIME  >=  2178
+SELECT max(DAYS_STAY) FROM Demographic WHERE ADMITTIME  >=  2182
+SELECT max(AGE) FROM Demographic WHERE MARITAL_STATUS  =  'widowed' AND GENDER  =  'male'
+SELECT AVG(AGE) FROM Demographic WHERE MARITAL_STATUS  =  'divorcee' AND GENDER  =  'male'
+SELECT max(AGE) FROM Demographic WHERE ADMISSION_TYPE  =  'elective' AND RELIGION  =  'widow'
+SELECT AVG(AGE) FROM Demographic WHERE MARITAL_STATUS  =  'married' AND ADMISSION_TYPE  =  'urgent'
+SELECT max(AGE) FROM Demographic WHERE MARITAL_STATUS  =  'married' AND INSURANCE  =  'medicaid'
+SELECT count(*) FROM Demographic WHERE MARITAL_STATUS  =  'married' AND INSURANCE  =  'medicare'
+SELECT min(AGE) FROM Demographic WHERE MARITAL_STATUS  =  'married' AND EXPIRE_FLAG  =  'death/expired'
+SELECT min(AGE) FROM Demographic WHERE ADMISSION_TYPE  =  'married' AND ADMISSION_TYPE  =  'against medical advise'
+SELECT max(AGE) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.MARITAL_STATUS  =  'married' AND T2.ICD9_CODE  =  '425.9'
+SELECT avg(AGE) FROM Demographic WHERE AGE  >=  43 AND MARITAL_STATUS  =  'married'
+SELECT AVG (AGE) FROM Demographic WHERE DOB_YEAR  >  2090 AND MARITAL_STATUS  =  'Unmarried'
+SELECT min(AGE) FROM Demographic WHERE ADMITTIME  >=  2180 AND MARITAL_STATUS  =  'Married'
+SELECT min(AGE) FROM Demographic WHERE ADMITTIME  >=  2155 AND MARITAL_STATUS  =  'Unmarried'
+SELECT AVG (AGE) FROM Demographic WHERE ETHNICITY  =  'black/cape verdean' AND GENDER  =  'male'
+SELECT max(AGE) FROM Demographic WHERE ADMISSION_LOCATION  =  'skilled nursing facility' AND GENDER  =  'female'
+SELECT AVG(AGE) FROM Demographic WHERE ADMISSION_TYPE  =  'psychiatric facility-partial hospitalization' AND GENDER  =  'female'
+SELECT max(AGE) FROM Demographic WHERE AGE  >=  85 AND GENDER  =  'female'
+SELECT min(AGE) FROM Demographic WHERE GENDER  =  'F' AND AGE  >=  31
+SELECT min(AGE) FROM Demographic WHERE GENDER  =  'M' AND AGE  >=  50
+SELECT avg(age) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.LANGUAGE  =  'span' AND T2.ICD9_CODE  =  'brain mass;intracranial hemorrhage'
+SELECT min(AGE) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.LANGUAGE  =  'spanish' AND T2.ICD9_CODE  =  'bladder cancer/sda'
+SELECT avg(age) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.LANGUAGE  =  'russian' AND T2.ICD9_CODE  =  '271.8'
+SELECT min(AGE) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.LONG_TITLE  =  'Complete heart block'
+SELECT max(AGE) FROM Demographic WHERE INSURANCE  =  'government' AND ADMISSION_TYPE  =  1
+SELECT max(AGE) FROM Demographic WHERE ADMISSION_TYPE  =  'elective' AND INSURANCE  =  'private'
+SELECT avg(age) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  'aortic insufficiency re-do sternotomy aortic valve replacement' AND T1.ADMISSION_TYPE  =  'emergency'
+SELECT min(AGE) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T2.ICD9_CODE  =  'hypertension' AND T2.ICD9_CODE  !=  'coronary artery disease' AND T2.ICD9_CODE  !=  'cardiac catheterization'
+SELECT min(AGE) FROM Demographic WHERE DAYS_STAY  =  1
+SELECT max(AGE) FROM Demographic WHERE ADMISSION_TYPE  =  'emergency' AND DAYS_STAY  =  2
+SELECT AVG (AGE) FROM Demographic WHERE ADMISSION_LOCATION  =  'emergency' AND DOB_YEAR  >  2074
+SELECT max(AGE) FROM Demographic WHERE DOB_YEAR  <  2076
+SELECT min(AGE) FROM Demographic WHERE DOB_YEAR  >  2089
+SELECT min(AGE) FROM Demographic WHERE DOD_YEAR < 2138
+SELECT max(AGE) FROM Demographic WHERE DOD_YEAR < 2173
+SELECT min(AGE) FROM Demographic WHERE ADMISSION_TYPE  =  'urgent' AND DOD  <  2111
+SELECT max(AGE) FROM Demographic WHERE ADMITTIME  >=  '2174-01-01'
+SELECT min(AGE) FROM Demographic WHERE ADMITTIME  >=  '2178-01-01'
+SELECT min(AGE) FROM Demographic WHERE INSURANCE  =  'medicaid' AND ETHNICITY  =  'white'
+SELECT min(age) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.INSURANCE  =  'medicaid' AND T2.SHORT_TITLE  =  'sdh'
+SELECT max(AGE) FROM Demographic WHERE ETHNICITY  =  'white-russian' AND DAYS_STAY  =  27
+SELECT max(AGE) FROM Demographic WHERE ETHNICITY  =  'white' AND DAYS_STAY  =  5
+SELECT max(AGE) FROM Demographic WHERE ETHNICITY  =  'black/african american' AND DOD_YEAR  <  2148
+SELECT min(AGE) FROM Demographic WHERE ADMITTIME  >=  2138 AND ETHNICITY  =  'white-russian' GROUP BY ETHNICITY
+SELECT AVG(AGE) FROM Demographic WHERE ETHNICITY  =  'White-Russian' AND ADMITTIME  >=  2144
+SELECT max(AGE) FROM Demographic WHERE DIAGNOSIS  =  'sigmoid diverticulitis colovestical fistula/sda' AND EXPIRE_FLAG  =  'unspecified'
+SELECT avg(age) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.EXPIRE_FLAG  =  0 AND T2.ICD9_CODE  =  'newborn'
+SELECT max(AGE) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DOD  IS NOT NULL AND T2.ICD9_CODE  =  'pituitary bleed'
+SELECT AVG(AGE) FROM Demographic WHERE DOD  =  0 AND AGE  >=  67
+SELECT AVG (AGE) FROM Demographic WHERE ADMITTIME  >=  2120 AND DOD  IS  NULL
+SELECT max(AGE) FROM Demographic WHERE DISCHARGE_LOCATION  =  'home health care'
+SELECT max(AGE) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_LOCATION  =  'clinic referral/premature' AND T2.LONG_TITLE  =  'sternal wound infection'
+SELECT max(AGE) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_LOCATION  =  'trsf' AND T2.ICD9_CODE  =  '59.1'
+SELECT max(AGE) FROM Demographic WHERE ADMISSION_TYPE  =  'EMERGENCY' AND DAYS_STAY  =  8
+SELECT max(AGE) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DISCHARGE_LOCATION  =  'home' AND T2.ICD9_CODE  =  'bladder cancer/sda'
+SELECT max(AGE) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'home health care' AND T2.ICD9_CODE  =  'left femur fracture'
+SELECT avg(age) FROM Demographic WHERE discharge_location  =  'home health care' AND hadm_id IN (SELECT hadm_id FROM Diagnoses WHERE icd9_code  =  'angiodema')
+SELECT max(AGE) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMISSION_TYPE  =  'discharge-transfer' AND T2.SHORT_TITLE  =  'overdose' AND T1.ADMISSION_TYPE  =  'psych hospital'
+SELECT max(AGE) FROM Demographic WHERE DAYS_STAY  =  15 AND DISCHARGE_LOCATION  =  'Skilled Nursing Facility'
+SELECT max(AGE) FROM Demographic WHERE DISCHARGE_LOCATION  =  'short term hospital' AND DAYS_STAY  =  17
+SELECT min(age) FROM demographic AS T1 JOIN diagnoses AS T2 ON T1.hadm_id  =  T2.hadm_id WHERE days_stay  =  20 AND ( icd9_code  =  'aortic insufficiency' OR icd9_code  =  're-do sternotomy aortic valve replacement' )
+SELECT avg(age) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  =  13 AND T2.ICD9_CODE  =  'st elevated myocardial infarction/cardiac catheterization'
+SELECT min(age) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.DAYS_STAY  =  8 AND T2.ICD9_CODE  =  'angioedema'
+SELECT avg(age) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.hadm_id  =  T2.hadm_id WHERE T1.days_stay  =  29 AND T2.icd9_code  =  'V40.9'
+SELECT max(AGE) FROM Demographic WHERE DOD  <  2138 AND ICD9_CODE  =  'newborn primary disease'
+SELECT min(age) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.hadm_id  =  T2.hadm_id WHERE T1.admittime  >=  2155 AND T2.icd9_code  =  '2508.2' 
+SELECT max(AGE) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  >=  2146 AND T2.ICD9_CODE  =  'neoplasm of uncertain behavior of other lymphatic and hematopoietic tissues\bone marrow transplant'
+SELECT min(age) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  >=  2119 AND T2.ICD9_CODE  =  'S83.0'
+SELECT avg(T1.AGE) FROM Demographic AS T1 JOIN Diagnoses AS T2 ON T1.HADM_ID  =  T2.HADM_ID WHERE T1.ADMITTIME  >=  2164 AND T2.ICD9_CODE  =  'primary disease gangrene' GROUP BY T1.HADM_ID
+SELECT avg(AGE) FROM Demographic WHERE AGE  <  24 AND ADMITTIME  <=  '2176-01-01'
+SELECT AVG(AGE) FROM Demographic WHERE AGE  >  76 AND ADMITTIME  >=  2173
+SELECT AVG(AGE) FROM Demographic WHERE ADMITTIME  >=  2197 AND AGE  >=  44
+SELECT max(AGE) FROM Demographic WHERE DAYS_STAY  =  43 AND ADMITTIME  >=  '2119-01-01'
+SELECT max(AGE) FROM Demographic WHERE ADMITTIME  >=  '2187-01-01' AND DAYS_STAY  =  34

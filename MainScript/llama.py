@@ -54,7 +54,6 @@ class TextGenerator:
             presence_penalty=0.0,
         )
         outputs = self.model.generate(**inputs, generation_config=gen_config, stopping_criteria=stopping_criteria)
-        print(self.tokenizer.decode(outputs[0]))
         outputs = outputs[0][inputs_length:]
         out = self.tokenizer.decode(outputs)
         
@@ -100,4 +99,3 @@ if __name__ == '__main__':
     
     text_generator = TextGenerator(model_id, token)
     generated_text = text_generator.generate_text(prompt)
-    print(generated_text)

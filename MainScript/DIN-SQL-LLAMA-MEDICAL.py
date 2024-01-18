@@ -630,9 +630,7 @@ def syntax_fixer(sql):
                         for l in range(k+1, len(sql)):
                             if sql[l] == ' ':
                                 # make the next character uppercase
-                                print(sql)
                                 sql = sql[:l+1] + sql[l+1].upper() + sql[l+2:]
-                                print(sql)
                                 break
         
     
@@ -704,7 +702,6 @@ def GPT4_debug(prompt):
 if __name__ == '__main__':
     spider_schema,spider_primary,spider_foreign = creatiing_schema(DATASET_SCHEMA)
     val_df = load_data(DATASET)
-    val_df = val_df.sample(100)
     print(f"Number of data samples {val_df.shape[0]}")
     CODEX = []
     for index, row in val_df.iterrows():
@@ -718,7 +715,6 @@ if __name__ == '__main__':
                 schema_links = GPT4_generation(
                     schema_linking_prompt_maker(row['question_refine'], "medical"))
             except Exception as e:
-                raise(e)
                 time.sleep(3)
                 pass
         try:
@@ -733,7 +729,6 @@ if __name__ == '__main__':
                 classification = GPT4_generation(
                     classification_prompt_maker(row['question_refine'], "medical", schema_links[1:]))
             except Exception as e:
-                raise(e)
                 time.sleep(3)
                 pass
         try:
@@ -749,7 +744,6 @@ if __name__ == '__main__':
                 try:
                     SQL = GPT4_generation(easy_prompt_maker(row['question_refine'], "medical", schema_links))
                 except Exception as e:
-                  raise(e)
                   time.sleep(3)
                   pass
         elif '"NON-NESTED"' in predicted_class:
@@ -759,13 +753,11 @@ if __name__ == '__main__':
                 try:
                     SQL = GPT4_generation(medium_prompt_maker(row['question_refine'], "medical", schema_links))
                 except Exception as e:
-                  raise(e)
                   time.sleep(3)
                   pass
             try:
                 SQL = SQL.split("SQL: ")[1]
             except Exception as e:
-                  raise(e)
                   time.sleep(3)
                   pass
         else:
@@ -777,7 +769,6 @@ if __name__ == '__main__':
                     SQL = GPT4_generation(
                         hard_prompt_maker(row['question_refine'], "medical", schema_links, sub_questions))
                 except Exception as e:
-                  raise(e)
                   time.sleep(3)
                   pass
             try:
@@ -794,8 +785,11 @@ if __name__ == '__main__':
                 time.sleep(3)
                 pass
         SQL = "SELECT " + debugged_SQL
-        print("Predicted non-capitalized:" + SQL)
-        SQL = syntax_fixer(SQL)
+        # print("Predicted non-capitalized:" + SQL)
+        # try:
+        #     SQL = syntax_fixer(SQL)
+        # except Exception as e:
+        #     print("Error in syntax correction" + str(e))
         print("Predicted:" + SQL)
         print("Gold:" + row['sql'])
         print("\n#############################################################################\n")
