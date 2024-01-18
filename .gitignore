@@ -6,11 +6,22 @@ physionet.org/
 
 # Ignore the 'TREQS/database' directory
 /TREQS/database/
+/TREQS/LeafNATS/
+/TREQS/database/
+/TREQS/evaluation/mimic_db/
 
+# Ignore venvs
 .autogptq/
-
 .venv/
-
 .long/
 
 /nltk_data
+
+# Ignore pyc files
+*.pyc
+
+# Ignore core files
+core*
+
+# Ignore IPYNB
+*.ipynb
